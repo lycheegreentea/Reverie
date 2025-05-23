@@ -10,8 +10,9 @@ import SwiftUI
 import SwiftUI
 
 struct PastWords: View {
-    let words: [Word] = loadWords()
+    @State private var words: [Word] = loadWords()
 
+   
     var pastWords: [Word] {
         let now = Date()
         return words.filter { $0.date < now }

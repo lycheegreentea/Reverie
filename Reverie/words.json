@@ -1,230 +1,271 @@
 [
-  {
-    "date": "2025-05-22",
-    "word": "sedulous",
-    "partOfSpeech": "adjective",
-    "pronunciation": "SEH-juh-lus",
-    "definition": "Showing dedication and diligence.",
-    "example": "She was sedulous in her studies."
-  },
-  {
-    "date": "2025-05-23",
-    "word": "hiraeth",
-    "partOfSpeech": "noun",
-    "pronunciation": "HEER-eyeth",
-    "definition": "A homesickness for a home you can’t return to or never had.",
-    "example": "A feeling of hiraeth swept over him as he looked at old photos."
-  },
-  {
-    "date": "2025-05-24",
-    "word": "eunoia",
-    "partOfSpeech": "noun",
-    "pronunciation": "yoo-NOY-uh",
-    "definition": "Beautiful thinking; a well mind.",
-    "example": "Eunoia guided her through meditation."
-  },
-  {
-    "date": "2025-05-25",
-    "word": "orphic",
-    "partOfSpeech": "adjective",
-    "pronunciation": "OR-fik",
-    "definition": "Mysterious and entrancing; beyond ordinary understanding.",
-    "example": "The orphic music held them spellbound."
-  },
-  {
-    "date": "2025-05-26",
-    "word": "metanoia",
-    "partOfSpeech": "noun",
-    "pronunciation": "meh-tuh-NOY-uh",
-    "definition": "A transformative change of heart.",
-    "example": "His journey was marked by metanoia."
-  },
-  {
-    "date": "2025-05-27",
-    "word": "lucent",
-    "partOfSpeech": "adjective",
-    "pronunciation": "LOO-sent",
-    "definition": "Glowing with or giving off light.",
-    "example": "Her skin appeared lucent under the moonlight."
-  },
-  {
-    "date": "2025-05-28",
-    "word": "heliophilia",
-    "partOfSpeech": "noun",
-    "pronunciation": "hee-lee-oh-FIL-ee-uh",
-    "definition": "Love of sunlight.",
-    "example": "Her heliophilia drew her to the beach every summer."
-  },
-  {
-    "date": "2025-05-29",
-    "word": "seraphic",
-    "partOfSpeech": "adjective",
-    "pronunciation": "seh-RAF-ik",
-    "definition": "Characteristic of or resembling a seraph; angelic.",
-    "example": "He gave a seraphic smile."
-  },
-  {
-    "date": "2025-05-30",
-    "word": "austere",
-    "partOfSpeech": "adjective",
-    "pronunciation": "aw-STIR",
-    "definition": "Severe or strict in manner; plain and simple style.",
-    "example": "The room was austere and unadorned."
-  },
-  {
-    "date": "2025-05-31",
-    "word": "mellifluous",
-    "partOfSpeech": "adjective",
-    "pronunciation": "muh-LIF-loo-uhs",
-    "definition": "Pleasantly smooth and musical to hear.",
-    "example": "Her mellifluous voice lulled him to sleep."
-  },
-  {
-    "date": "2025-06-01",
-    "word": "atelophobia",
-    "partOfSpeech": "noun",
-    "pronunciation": "at-uh-luh-FOH-bee-uh",
-    "definition": "The fear of imperfection.",
-    "example": "Atelophobia kept her from sharing her art."
-  },
-  {
-    "date": "2025-06-02",
-    "word": "amaranthine",
-    "partOfSpeech": "adjective",
-    "pronunciation": "am-uh-RAN-thin",
-    "definition": "Unfading; everlasting.",
-    "example": "Their love was amaranthine."
-  },
-  {
-    "date": "2025-06-03",
-    "word": "wanderlust",
-    "partOfSpeech": "noun",
-    "pronunciation": "WON-der-lust",
-    "definition": "A strong desire to travel.",
-    "example": "Wanderlust took her to every continent."
-  },
-  {
-    "date": "2025-06-04",
-    "word": "palinoia",
-    "partOfSpeech": "noun",
-    "pronunciation": "pal-uh-NOY-uh",
-    "definition": "The obsessive repetition of an act until it’s perfect.",
-    "example": "His palinoia made him redo his sketches constantly."
-  },
-  {
-    "date": "2025-06-05",
-    "word": "taceneda",
-    "partOfSpeech": "noun",
-    "pronunciation": "tas-uh-NEH-duh",
-    "definition": "A fictional word often meaning the quiet between two people who both want to speak but are unsure how.",
-    "example": "A moment of taceneda lingered between them."
-  },
-  {
-    "date": "2025-06-06",
-    "word": "selcouth",
-    "partOfSpeech": "adjective",
-    "pronunciation": "SEL-kooth",
-    "definition": "Unfamiliar, rare, strange, and yet marvelous.",
-    "example": "The selcouth landscape left her breathless."
-  },
-  {
-    "date": "2025-06-07",
-    "word": "zenosyne",
-    "partOfSpeech": "noun",
-    "pronunciation": "ZEN-oh-sin",
-    "definition": "The feeling that time moves faster as you age.",
-    "example": "Zenosyne made her treasure each day."
-  },
-  {
-    "date": "2025-06-08",
-    "word": "eccedentesiast",
-    "partOfSpeech": "noun",
-    "pronunciation": "ek-si-DEN-tee-stee-ast",
-    "definition": "Someone who hides pain behind a smile.",
-    "example": "She was an eccedentesiast, always smiling despite her struggles."
-  },
-  {
-    "date": "2025-06-09",
-    "word": "peregrinate",
-    "partOfSpeech": "verb",
-    "pronunciation": "PER-uh-gri-nate",
-    "definition": "To travel or wander from place to place.",
-    "example": "They spent the summer peregrinating across Europe."
-  },
-  {
-    "date": "2025-06-10",
-    "word": "nefelibata",
-    "partOfSpeech": "noun",
-    "pronunciation": "nef-uh-LIB-uh-tuh",
-    "definition": "One who lives in the clouds of their imagination.",
-    "example": "A true nefelibata, she was lost in dreams."
-  },
-  {
-    "date": "2025-06-11",
-    "word": "scintilla",
-    "partOfSpeech": "noun",
-    "pronunciation": "sin-TIL-uh",
-    "definition": "A tiny trace or spark of a feeling.",
-    "example": "There wasn’t a scintilla of doubt in his mind."
-  },
-  {
-    "date": "2025-06-12",
-    "word": "verklempt",
-    "partOfSpeech": "adjective",
-    "pronunciation": "ver-KLEMPT",
-    "definition": "Overcome with emotion.",
-    "example": "He was verklempt during the farewell speech."
-  },
-  {
-    "date": "2025-06-13",
-    "word": "quisling",
-    "partOfSpeech": "noun",
-    "pronunciation": "KWIZ-ling",
-    "definition": "A traitor who collaborates with an enemy force.",
-    "example": "He was branded a quisling for his betrayal."
-  },
-  {
-    "date": "2025-06-14",
-    "word": "trouvaille",
-    "partOfSpeech": "noun",
-    "pronunciation": "troo-VY",
-    "definition": "A lucky find.",
-    "example": "The little café was a trouvaille on their trip."
-  },
-  {
-    "date": "2025-06-15",
-    "word": "sillage",
-    "partOfSpeech": "noun",
-    "pronunciation": "see-YAHZH",
-    "definition": "The scent that lingers in air after someone leaves.",
-    "example": "Her perfume left a sillage he couldn’t forget."
-  },
-  {
-    "date": "2025-06-16",
-    "word": "sanguine",
-    "partOfSpeech": "adjective",
-    "pronunciation": "SANG-gwin",
-    "definition": "Optimistic or positive, especially in a bad situation.",
-    "example": "She remained sanguine despite the setbacks."
-  },
-  {
-    "date": "2025-06-17",
-    "word": "catharsis",
-    "partOfSpeech": "noun",
-    "pronunciation": "kuh-THAR-sis",
-    "definition": "Emotional release or purification.",
-    "example": "Crying was a form of catharsis for him."
-  },
-  {
-    "date": "2025-06-18",
-    "word": "halcyon",
-    "partOfSpeech": "adjective",
-    "pronunciation": "HAL-see-un",
-    "definition": "Calm, peaceful, or nostalgic of a better time.",
-    "example": "They reminisced about the halcyon days of youth."
-  }
-]
+    {
+        "date": "2025-05-22",
+        "word": "sedulous",
+        "partOfSpeech": "adjective",
+        "pronunciation": "SEH-juh-lus",
+        "definition": "Showing dedication and diligence.",
+        "example": "She was sedulous in her studies.",
+        "isFavorite":false
+   
+    },
+    {
+        "date": "2025-05-23",
+        "word": "hiraeth",
+        "partOfSpeech": "noun",
+        "pronunciation": "HEER-eyeth",
+        "definition": "A homesickness for a home you can’t return to or never had.",
+        "example": "A feeling of hiraeth swept over him as he looked at old photos.",
+        "isFavorite":false
 
+        
+    },
+    {
+      "date": "2025-05-24",
+      "word": "eunoia",
+      "partOfSpeech": "noun",
+      "pronunciation": "yoo-NOY-uh",
+      "definition": "Beautiful thinking; a well mind.",
+      "example": "Eunoia guided her through meditation.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-25",
+      "word": "orphic",
+      "partOfSpeech": "adjective",
+      "pronunciation": "OR-fik",
+      "definition": "Mysterious and entrancing; beyond ordinary understanding.",
+      "example": "The orphic music held them spellbound.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-26",
+      "word": "metanoia",
+      "partOfSpeech": "noun",
+      "pronunciation": "meh-tuh-NOY-uh",
+      "definition": "A transformative change of heart.",
+      "example": "His journey was marked by metanoia.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-27",
+      "word": "lucent",
+      "partOfSpeech": "adjective",
+      "pronunciation": "LOO-sent",
+      "definition": "Glowing with or giving off light.",
+      "example": "Her skin appeared lucent under the moonlight.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-28",
+      "word": "heliophilia",
+      "partOfSpeech": "noun",
+      "pronunciation": "hee-lee-oh-FIL-ee-uh",
+      "definition": "Love of sunlight.",
+      "example": "Her heliophilia drew her to the beach every summer.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-29",
+      "word": "seraphic",
+      "partOfSpeech": "adjective",
+      "pronunciation": "seh-RAF-ik",
+      "definition": "Characteristic of or resembling a seraph; angelic.",
+      "example": "He gave a seraphic smile.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-30",
+      "word": "austere",
+      "partOfSpeech": "adjective",
+      "pronunciation": "aw-STIR",
+      "definition": "Severe or strict in manner; plain and simple style.",
+      "example": "The room was austere and unadorned.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-05-31",
+      "word": "mellifluous",
+      "partOfSpeech": "adjective",
+      "pronunciation": "muh-LIF-loo-uhs",
+      "definition": "Pleasantly smooth and musical to hear.",
+      "example": "Her mellifluous voice lulled him to sleep.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-06-01",
+      "word": "atelophobia",
+      "partOfSpeech": "noun",
+      "pronunciation": "at-uh-luh-FOH-bee-uh",
+      "definition": "The fear of imperfection.",
+      "example": "Atelophobia kept her from sharing her art.",
+      "isFavorite":false
+
+    },
+    {
+      "date": "2025-06-02",
+      "word": "amaranthine",
+      "partOfSpeech": "adjective",
+      "pronunciation": "am-uh-RAN-thin",
+      "definition": "Unfading; everlasting.",
+      "example": "Their love was amaranthine.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-03",
+      "word": "wanderlust",
+      "partOfSpeech": "noun",
+      "pronunciation": "WON-der-lust",
+      "definition": "A strong desire to travel.",
+      "example": "Wanderlust took her to every continent.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-04",
+      "word": "palinoia",
+      "partOfSpeech": "noun",
+      "pronunciation": "pal-uh-NOY-uh",
+      "definition": "The obsessive repetition of an act until it’s perfect.",
+      "example": "His palinoia made him redo his sketches constantly.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-05",
+      "word": "taceneda",
+      "partOfSpeech": "noun",
+      "pronunciation": "tas-uh-NEH-duh",
+      "definition": "A fictional word often meaning the quiet between two people who both want to speak but are unsure how.",
+      "example": "A moment of taceneda lingered between them.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-06",
+      "word": "selcouth",
+      "partOfSpeech": "adjective",
+      "pronunciation": "SEL-kooth",
+      "definition": "Unfamiliar, rare, strange, and yet marvelous.",
+      "example": "The selcouth landscape left her breathless.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-07",
+      "word": "zenosyne",
+      "partOfSpeech": "noun",
+      "pronunciation": "ZEN-oh-sin",
+      "definition": "The feeling that time moves faster as you age.",
+      "example": "Zenosyne made her treasure each day.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-08",
+      "word": "eccedentesiast",
+      "partOfSpeech": "noun",
+      "pronunciation": "ek-si-DEN-tee-stee-ast",
+      "definition": "Someone who hides pain behind a smile.",
+      "example": "She was an eccedentesiast, always smiling despite her struggles.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-09",
+      "word": "peregrinate",
+      "partOfSpeech": "verb",
+      "pronunciation": "PER-uh-gri-nate",
+      "definition": "To travel or wander from place to place.",
+      "example": "They spent the summer peregrinating across Europe.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-10",
+      "word": "nefelibata",
+      "partOfSpeech": "noun",
+      "pronunciation": "nef-uh-LIB-uh-tuh",
+      "definition": "One who lives in the clouds of their imagination.",
+      "example": "A true nefelibata, she was lost in dreams.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-11",
+      "word": "scintilla",
+      "partOfSpeech": "noun",
+      "pronunciation": "sin-TIL-uh",
+      "definition": "A tiny trace or spark of a feeling.",
+      "example": "There wasn’t a scintilla of doubt in his mind.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-12",
+      "word": "verklempt",
+      "partOfSpeech": "adjective",
+      "pronunciation": "ver-KLEMPT",
+      "definition": "Overcome with emotion.",
+      "example": "He was verklempt during the farewell speech.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-13",
+      "word": "quisling",
+      "partOfSpeech": "noun",
+      "pronunciation": "KWIZ-ling",
+      "definition": "A traitor who collaborates with an enemy force.",
+      "example": "He was branded a quisling for his betrayal.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-14",
+      "word": "trouvaille",
+      "partOfSpeech": "noun",
+      "pronunciation": "troo-VY",
+      "definition": "A lucky find.",
+      "example": "The little café was a trouvaille on their trip.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-15",
+      "word": "sillage",
+      "partOfSpeech": "noun",
+      "pronunciation": "see-YAHZH",
+      "definition": "The scent that lingers in air after someone leaves.",
+      "example": "Her perfume left a sillage he couldn’t forget.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-16",
+      "word": "sanguine",
+      "partOfSpeech": "adjective",
+      "pronunciation": "SANG-gwin",
+      "definition": "Optimistic or positive, especially in a bad situation.",
+      "example": "She remained sanguine despite the setbacks.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-17",
+      "word": "catharsis",
+      "partOfSpeech": "noun",
+      "pronunciation": "kuh-THAR-sis",
+      "definition": "Emotional release or purification.",
+      "example": "Crying was a form of catharsis for him.",
+      "isFavorite":false
+    },
+    {
+      "date": "2025-06-18",
+      "word": "halcyon",
+      "partOfSpeech": "adjective",
+      "pronunciation": "HAL-see-un",
+      "definition": "Calm, peaceful, or nostalgic of a better time.",
+      "example": "They reminisced about the halcyon days of youth.",
+      "isFavorite":false
+    }
+  ]
+
+   
 
 
 

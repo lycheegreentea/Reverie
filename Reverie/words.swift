@@ -15,6 +15,9 @@ struct Word: Codable, Identifiable {
     let pronunciation: String
     let definition: String
     let example: String
+    var isFavorite: Bool = false
+
+
 
 }
 

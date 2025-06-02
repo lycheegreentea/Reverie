@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct GeneralWord: View {
+struct WordRow: View {
+    @Binding var word: Word
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack(alignment: .leading) {
+            HStack {
+                Text(word.word)
+                    .font(.headline)
+                Spacer()
 
-#Preview {
-    GeneralWord()
+            }
+
+            Text(word.partOfSpeech)
+            Text(word.pronunciation)
+            Text(word.definition)
+            Text(word.example).italic()
+            Text(word.date.formatted(date: .abbreviated, time: .omitted))
+                .font(.caption2)
+                .foregroundColor(.gray)
+        }
+        .padding(4)
+    }
 }

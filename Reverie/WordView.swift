@@ -1,4 +1,5 @@
 //
+//
 //  SwiftUIView.swift
 //  Reverie
 //
@@ -6,36 +7,34 @@
 //
 
 import SwiftUI
-let words = loadWords()
-
-var currentWords: [Word] {
-    let calendar = Calendar.current
-    let todayStart = calendar.startOfDay(for: Date())
-    return words.filter { $0.date == todayStart}
-}
 
 let calendar = Calendar.current
 let todayStart = calendar.startOfDay(for: Date())
 
-
 struct WordView: View {
-    @State private var isStarFilled = false
+    @EnvironmentObject var favoriteManager: FavoriteManager
+    @EnvironmentObject var wordStore: WordStore
+    
+
+    
+    
     var body: some View {
         NavigationView {
-            List(currentWords) { word in
+            List(WordStore().todaysWord) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)
                             .font(.headline)
                         Spacer()
-                        Button {
-                            isStarFilled.toggle()
-                            print("Apple Button Tapped")
-                        } label: {
-                            Label("", systemImage: isStarFilled ? "star.fill" : "star")
-                                .foregroundColor(.yellow)
-                        }
+                        Button(action: {
+                            favoriteManager.toggleFavorite(for: word)
+                                    }) {
+                                        Image(systemName: favoriteManager.isFavorite(word) ? "heart.fill" : "heart")
+                                            .foregroundColor(.red)
+                                    }
+                        .buttonStyle(BorderlessButtonStyle())
                     }
+                    
                     
                     Text(word.partOfSpeech)
                         .font(.subheadline)
@@ -50,13 +49,18 @@ struct WordView: View {
                         .font(.caption2)
                         .foregroundColor(.gray)
                 }
-                .padding(4)
+                }
+                .navigationTitle("The Daily Word")
+
             }
-            .navigationTitle("The Daily Word")
+
         }
+
     }
-}
 
 #Preview {
     WordView()
+            .environmentObject(FavoriteManager())
+            .environmentObject(WordStore())
 }
+

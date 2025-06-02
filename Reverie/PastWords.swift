@@ -4,26 +4,33 @@
 //
 //  Created by Lauren Chen on 5/22/25.
 //
-
 import SwiftUI
 
 import SwiftUI
-
+var words: [Word] = loadWords()
 struct PastWords: View {
-    @State private var words: [Word] = loadWords()
+    @EnvironmentObject var favoriteManager: FavoriteManager
+    @EnvironmentObject var wordStore: WordStore
 
    
-    var pastWords: [Word] {
-        let now = Date()
-        return words.filter { $0.date < now }
-    }
+
 
     var body: some View {
         NavigationView {
-            List(pastWords) { word in
+            List(WordStore().pastWords) { word in
                 VStack(alignment: .leading) {
-                    Text(word.word)
-                        .font(.headline)
+                    HStack{
+                        Text(word.word)
+                            .font(.headline)
+                        Spacer()
+                        Button(action: {
+                            favoriteManager.toggleFavorite(for: word)
+                                    }) {
+                                        Image(systemName: favoriteManager.isFavorite(word) ? "heart.fill" : "heart")
+                                            .foregroundColor(.red)
+                                    }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
                     Text(word.partOfSpeech)
                         .font(.subheadline)
                     Text(word.pronunciation)
@@ -42,8 +49,12 @@ struct PastWords: View {
             .navigationTitle("Past Words")
         }
     }
+
 }
+
 
 #Preview {
     PastWords()
+        .environmentObject(FavoriteManager())
+        .environmentObject(WordStore())
 }

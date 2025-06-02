@@ -11,16 +11,16 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Tab("Word", systemImage: "tray.and.arrow.down.fill") {
-                    WordView()
+                WordView()
+                    .environmentObject(FavoriteManager())
                 }
             Tab("Past Words", systemImage: "tray.and.arrow.down.fill") {
-                    PastWords()
-                }
-            Tab("Origins", systemImage: "tray.and.arrow.down.fill") {
-                    PastWords()
+                PastWords()
+                    .environmentObject(FavoriteManager())
                 }
             Tab("Settings", systemImage: "tray.and.arrow.down.fill") {
-                    PastWords()
+                PastWords()
+                    .environmentObject(FavoriteManager())
                 }
         }
     }

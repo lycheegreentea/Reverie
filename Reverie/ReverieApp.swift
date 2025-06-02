@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct ReverieApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    @EnvironmentObject var favoriteManager: FavoriteManager
+    @EnvironmentObject var wordStore: WordStore
+
+        var body: some Scene {
+            WindowGroup {
+                ContentView()
+                    .environmentObject(favoriteManager)
+                    .environmentObject(wordStore)
+            }
         }
-    }
 }

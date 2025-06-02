@@ -15,7 +15,6 @@ struct Word: Codable, Identifiable {
     let pronunciation: String
     let definition: String
     let example: String
-    var isFavorite: Bool = false
 
 
 
@@ -31,7 +30,6 @@ func loadWords() -> [Word] {
         let data = try Data(contentsOf: url)
         let decoder = JSONDecoder()
 
-        // Set date decoding strategy to match JSON format
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         decoder.dateDecodingStrategy = .formatted(formatter)
@@ -42,4 +40,25 @@ func loadWords() -> [Word] {
         print("Failed to decode words.json: \(error)")
         return []
     }
+}
+
+
+class WordStore: ObservableObject {
+    @Published var words: [Word] = loadWords()
+
+    
+
+    var todaysWord: [Word] {
+            let today = Calendar.current.startOfDay(for: Date())
+            return words.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
+        }
+    
+    var pastWords: [Word] {
+        let now = Date()
+        return words.filter { $0.date < now }
+    }
+
+    //var favoriteWords: [Word] {
+        //return words.filter { $0.isFavorite }
+    //}
 }

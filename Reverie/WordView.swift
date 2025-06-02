@@ -20,7 +20,7 @@ struct WordView: View {
     
     var body: some View {
         NavigationView {
-            List(WordStore().todaysWord) { word in
+            List(wordStore.todaysWord) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)
@@ -51,7 +51,7 @@ struct WordView: View {
                 }
                 }
                 .navigationTitle("The Daily Word")
-
+                .id(favoriteManager.favoritedDates)
             }
 
         }

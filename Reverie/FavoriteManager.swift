@@ -4,42 +4,54 @@
 //
 //  Created by Lauren Chen on 5/25/25.
 //
-
 import Foundation
+import Combine
 
-class FavoriteManager:ObservableObject
-{
-    @Published var favoritedDate: Set<Date> = []
-    
-    public let key = "favoriteWordDates"
-    
+class FavoriteManager: ObservableObject {
+    @Published private(set) var favoritedDates: Set<Date> = []
+
+    private let userDefaultsKey = "favoriteWordDates"
+
     init() {
         loadFavorites()
     }
-    
+
     func toggleFavorite(for word: Word) {
-        let dateKey = word.date
-        if favoritedDate.contains(dateKey) {
-            favoritedDate.remove(dateKey)
+        let date = word.date
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             
-        } else {
-            favoritedDate.insert(dateKey)
+            if self.favoritedDates.contains(date) {
+                self.favoritedDates.remove(date)
+            } else {
+                self.favoritedDates.insert(date)
+            }
+            
+            self.saveFavorites()
+            print("Favorites toggled: \(self.favoritedDates)")
         }
-        saveFavorites()
     }
-    
+
     func isFavorite(_ word: Word) -> Bool {
-        favoritedDate.contains(word.date)
+        favoritedDates.contains(word.date)
     }
-    
+
     private func saveFavorites() {
-        UserDefaults.standard.set(Array(favoritedDate), forKey: key)
-    }
-    
-    private func loadFavorites() {
-        if let savedDates = UserDefaults.standard.array(forKey: key) as? [Date] {
-            favoritedDate = Set(savedDates)
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(Array(favoritedDates)) {
+            UserDefaults.standard.set(encoded, forKey: userDefaultsKey)
         }
     }
-    
+
+    private func loadFavorites() {
+        if
+            let data = UserDefaults.standard.data(forKey: userDefaultsKey),
+            let decodedDates = try? JSONDecoder().decode([Date].self, from: data)
+        {
+            DispatchQueue.main.async { [weak self] in
+                self?.favoritedDates = Set(decodedDates)
+            }
+        }
+    }
 }

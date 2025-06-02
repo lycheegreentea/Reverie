@@ -7,17 +7,16 @@
 import SwiftUI
 
 import SwiftUI
-var words: [Word] = loadWords()
 struct PastWords: View {
     @EnvironmentObject var favoriteManager: FavoriteManager
     @EnvironmentObject var wordStore: WordStore
-
+    
    
 
 
     var body: some View {
         NavigationView {
-            List(WordStore().pastWords) { word in
+            List(wordStore.pastWords) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)
@@ -47,6 +46,7 @@ struct PastWords: View {
                 .padding(4)
             }
             .navigationTitle("Past Words")
+            .id(favoriteManager.favoritedDates)
         }
     }
 

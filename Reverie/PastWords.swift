@@ -30,6 +30,7 @@ struct PastWords: View {
                                     }
                         .buttonStyle(BorderlessButtonStyle())
                     }
+                    
                     Text(word.partOfSpeech)
                         .font(.subheadline)
                     Text(word.pronunciation)

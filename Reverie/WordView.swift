@@ -25,14 +25,7 @@ struct WordView: View {
                     HStack{
                         Text(word.word)
                             .font(.headline)
-                        Spacer()
-                        Button(action: {
-                            favoriteManager.toggleFavorite(for: word)
-                                    }) {
-                                        Image(systemName: favoriteManager.isFavorite(word) ? "heart.fill" : "heart")
-                                            .foregroundColor(.red)
-                                    }
-                        .buttonStyle(BorderlessButtonStyle())
+                        
                     }
                     
                     

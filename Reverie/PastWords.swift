@@ -15,8 +15,9 @@ struct PastWords: View {
 
 
     var body: some View {
+        let pastWords = wordStore.pastWords
         NavigationView {
-            List(wordStore.pastWords) { word in
+            List(pastWords) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)

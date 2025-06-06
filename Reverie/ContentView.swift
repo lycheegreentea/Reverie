@@ -15,17 +15,14 @@ struct ContentView: View {
                 }
             Tab("Archive", systemImage: "append.page") {
                 PastWords()
-                    .environmentObject(FavoriteManager())
                 }
         
             Tab("Favorites", systemImage: "append.page") {
                 FavoritesView()
-                    .environmentObject(FavoriteManager())
                 }
              
             Tab("Settings", systemImage: "gear") {
                 Settings()
-                    .environmentObject(FavoriteManager())
                 }
         }
         .environmentObject(FavoriteManager())

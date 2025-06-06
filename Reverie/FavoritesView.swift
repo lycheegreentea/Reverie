@@ -13,7 +13,6 @@ struct FavoritesView: View {
 
     var body: some View {
         let filteredWords = wordStore.words.filter(favoriteManager.isFavorite)
-
         NavigationView {
             if filteredWords.isEmpty {
                 VStack {

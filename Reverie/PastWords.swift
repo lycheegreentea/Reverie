@@ -10,7 +10,7 @@ import SwiftUI
 struct PastWords: View {
     @EnvironmentObject var favoriteManager: FavoriteManager
     @EnvironmentObject var wordStore: WordStore
-    
+ 
    
 
 
@@ -25,8 +25,8 @@ struct PastWords: View {
                         Button(action: {
                             favoriteManager.toggleFavorite(for: word)
                                     }) {
-                                        Image(systemName: favoriteManager.isFavorite(word) ? "heart.fill" : "heart")
-                                            .foregroundColor(.red)
+                                        Image(systemName: favoriteManager.isFavorite(word) ? "star.fill" : "star")
+                                            .foregroundColor(.yellow)
                                     }
                         .buttonStyle(BorderlessButtonStyle())
                     }
@@ -47,7 +47,6 @@ struct PastWords: View {
                 .padding(4)
             }
             .navigationTitle("Past Words")
-            .id(favoriteManager.favoritedDates)
         }
     }
 

@@ -10,19 +10,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Tab("Word", systemImage: "tray.and.arrow.down.fill") {
+            Tab("Word", systemImage: "textformat.characters") {
                 WordView()
-                    .environmentObject(FavoriteManager())
                 }
-            Tab("Past Words", systemImage: "tray.and.arrow.down.fill") {
+            Tab("Archive", systemImage: "append.page") {
                 PastWords()
                     .environmentObject(FavoriteManager())
                 }
-            Tab("Settings", systemImage: "tray.and.arrow.down.fill") {
-                PastWords()
+        
+            Tab("Favorites", systemImage: "append.page") {
+                FavoritesView()
+                    .environmentObject(FavoriteManager())
+                }
+             
+            Tab("Settings", systemImage: "gear") {
+                Settings()
                     .environmentObject(FavoriteManager())
                 }
         }
+        .environmentObject(FavoriteManager())
+        .environmentObject(WordStore())
     }
 }
 

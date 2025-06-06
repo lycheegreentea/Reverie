@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUICore
+
 
 struct Word: Codable, Identifiable {
     var id: Date { date }
@@ -15,6 +17,7 @@ struct Word: Codable, Identifiable {
     let pronunciation: String
     let definition: String
     let example: String
+
 
 
 
@@ -45,8 +48,8 @@ func loadWords() -> [Word] {
 
 class WordStore: ObservableObject {
     @Published var words: [Word] = loadWords()
+    @EnvironmentObject var favoriteManager: FavoriteManager
 
-    
 
     var todaysWord: [Word] {
             let today = Calendar.current.startOfDay(for: Date())
@@ -57,8 +60,7 @@ class WordStore: ObservableObject {
         let now = Date()
         return words.filter { $0.date < now }
     }
+    
 
-    //var favoriteWords: [Word] {
-        //return words.filter { $0.isFavorite }
-    //}
+    
 }

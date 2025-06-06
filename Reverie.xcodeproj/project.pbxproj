@@ -23,6 +23,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		947383F12DF13DAD00909B03 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		94A0EA732DE00A74001EE567 /* Reverie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reverie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A0EA802DE00A76001EE567 /* ReverieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReverieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +115,7 @@
 				94A0EA6F2DE00A74001EE567 /* Sources */,
 				94A0EA702DE00A74001EE567 /* Frameworks */,
 				94A0EA712DE00A74001EE567 /* Resources */,
+				947383F12DF13DAD00909B03 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -170,7 +184,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
+				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					94A0EA722DE00A74001EE567 = {

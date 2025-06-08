@@ -6,7 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		947383FB2DF282B300909B03 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947383FA2DF282B300909B03 /* WidgetKit.framework */; };
+		947383FD2DF282B300909B03 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947383FC2DF282B300909B03 /* SwiftUI.framework */; };
+		9473840A2DF282B400909B03 /* WordWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		947384082DF282B400909B03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94A0EA6B2DE00A74001EE567 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 947383F72DF282B300909B03;
+			remoteInfo = WordWidgetExtensionExtension;
+		};
 		94A0EA812DE00A76001EE567 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94A0EA6B2DE00A74001EE567 /* Project object */;
@@ -30,6 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				9473840A2DF282B400909B03 /* WordWidgetExtensionExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,12 +51,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WordWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		947383FA2DF282B300909B03 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		947383FC2DF282B300909B03 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		94A0EA732DE00A74001EE567 /* Reverie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reverie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A0EA802DE00A76001EE567 /* ReverieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReverieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A0EA8A2DE00A76001EE567 /* ReverieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReverieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9473840B2DF282B400909B03 /* Exceptions for "WordWidgetExtension" folder in "WordWidgetExtensionExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 947383F72DF282B300909B03 /* WordWidgetExtensionExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		947383FE2DF282B300909B03 /* WordWidgetExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9473840B2DF282B400909B03 /* Exceptions for "WordWidgetExtension" folder in "WordWidgetExtensionExtension" target */,
+			);
+			path = WordWidgetExtension;
+			sourceTree = "<group>";
+		};
 		94A0EA752DE00A74001EE567 /* Reverie */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Reverie;
@@ -61,6 +96,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		947383F52DF282B300909B03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				947383FD2DF282B300909B03 /* SwiftUI.framework in Frameworks */,
+				947383FB2DF282B300909B03 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94A0EA702DE00A74001EE567 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,12 +129,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		947383F92DF282B300909B03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				947383FA2DF282B300909B03 /* WidgetKit.framework */,
+				947383FC2DF282B300909B03 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		94A0EA6A2DE00A74001EE567 = {
 			isa = PBXGroup;
 			children = (
 				94A0EA752DE00A74001EE567 /* Reverie */,
 				94A0EA832DE00A76001EE567 /* ReverieTests */,
 				94A0EA8D2DE00A76001EE567 /* ReverieUITests */,
+				947383FE2DF282B300909B03 /* WordWidgetExtension */,
+				947383F92DF282B300909B03 /* Frameworks */,
 				94A0EA742DE00A74001EE567 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +156,7 @@
 				94A0EA732DE00A74001EE567 /* Reverie.app */,
 				94A0EA802DE00A76001EE567 /* ReverieTests.xctest */,
 				94A0EA8A2DE00A76001EE567 /* ReverieUITests.xctest */,
+				947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +164,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		947383F72DF282B300909B03 /* WordWidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9473840C2DF282B400909B03 /* Build configuration list for PBXNativeTarget "WordWidgetExtensionExtension" */;
+			buildPhases = (
+				947383F42DF282B300909B03 /* Sources */,
+				947383F52DF282B300909B03 /* Frameworks */,
+				947383F62DF282B300909B03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				947383FE2DF282B300909B03 /* WordWidgetExtension */,
+			);
+			name = WordWidgetExtensionExtension;
+			packageProductDependencies = (
+			);
+			productName = WordWidgetExtensionExtension;
+			productReference = 947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		94A0EA722DE00A74001EE567 /* Reverie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94A0EA942DE00A76001EE567 /* Build configuration list for PBXNativeTarget "Reverie" */;
@@ -120,6 +198,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				947384092DF282B400909B03 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				94A0EA752DE00A74001EE567 /* Reverie */,
@@ -187,6 +266,9 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					947383F72DF282B300909B03 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 					94A0EA722DE00A74001EE567 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -217,11 +299,19 @@
 				94A0EA722DE00A74001EE567 /* Reverie */,
 				94A0EA7F2DE00A76001EE567 /* ReverieTests */,
 				94A0EA892DE00A76001EE567 /* ReverieUITests */,
+				947383F72DF282B300909B03 /* WordWidgetExtensionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		947383F62DF282B300909B03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94A0EA712DE00A74001EE567 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +336,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		947383F42DF282B300909B03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94A0EA6F2DE00A74001EE567 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +367,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		947384092DF282B400909B03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 947383F72DF282B300909B03 /* WordWidgetExtensionExtension */;
+			targetProxy = 947384082DF282B400909B03 /* PBXContainerItemProxy */;
+		};
 		94A0EA822DE00A76001EE567 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 94A0EA722DE00A74001EE567 /* Reverie */;
@@ -283,6 +385,60 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9473840D2DF282B400909B03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WordWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.lauren.Reverie.WordWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9473840E2DF282B400909B03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WordWidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = name.lauren.Reverie.WordWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		94A0EA922DE00A76001EE567 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,6 +683,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9473840C2DF282B400909B03 /* Build configuration list for PBXNativeTarget "WordWidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9473840D2DF282B400909B03 /* Debug */,
+				9473840E2DF282B400909B03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		94A0EA6E2DE00A74001EE567 /* Build configuration list for PBXProject "Reverie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

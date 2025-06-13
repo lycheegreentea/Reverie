@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 struct DataService {
-    @AppStorage("quote", store: UserDefaults(suiteName: "group.com.laurencechen.Reverie"))
-    private var streak = 0
-    func log() {
-        streak += 1
-    }
-    func progress() -> Int {
-        return streak
-    }
+    var words: [Word] = loadWords()
+
+    private var widgetWord = 0
+    var todaysWord: [Word] {
+            let today = Calendar.current.startOfDay(for: Date())
+            return words.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
+        }
+    
 }
+

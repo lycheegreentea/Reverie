@@ -48,7 +48,6 @@ func loadWords() -> [Word] {
 
 class WordStore: ObservableObject {
     @Published var words: [Word] = loadWords()
-    @EnvironmentObject var favoriteManager: FavoriteManager
 
 
 
@@ -58,6 +57,16 @@ class WordStore: ObservableObject {
         return words.filter { $0.date < now }
     }
     
+    var todaysWord: [Word] {
+            let today = Calendar.current.startOfDay(for: Date())
+            return words.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
+        }
+
+
+        
+
+        }
+    
 
     
-}
+

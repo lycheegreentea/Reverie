@@ -10,18 +10,40 @@ import SwiftUI
 struct PastWords: View {
     @EnvironmentObject var favoriteManager: FavoriteManager
     @EnvironmentObject var wordStore: WordStore
- 
-   
-
+    @State private var searchTerm = ""
+    @State private var favoritesToggled = true
+    
+    var filteredWords: [Word] {
+        guard !searchTerm.isEmpty else {
+            return wordStore.pastWords
+        }
+        return wordStore.pastWords.filter { $0.word.localizedCaseInsensitiveContains(searchTerm)}
+    }
+    
 
     var body: some View {
-        let pastWords = wordStore.pastWords
-        NavigationView {
-            List(pastWords) { word in
+
+        let favoritesOnly = wordStore.words.filter(favoriteManager.isFavorite)
+        var chooseList: [Word] {
+            if(favoritesToggled){
+                return favoritesOnly
+            }
+            else{
+                return filteredWords
+            }
+        }
+        NavigationStack {
+            Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
+                .tint(Color.green)
+                .toggleStyle(.button)
+                //.labelStyle(.iconOnly)
+                .contentTransition(.opacity)
+            List(filteredWords) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)
                             .font(.headline)
+                        
                         Spacer()
                         Button(action: {
                             favoriteManager.toggleFavorite(for: word)
@@ -45,9 +67,13 @@ struct PastWords: View {
                         .font(.caption2)
                         .foregroundColor(.gray)
                 }
+
                 .padding(4)
             }
             .navigationTitle("Past Words")
+            
+            .searchable(text: $searchTerm, prompt: "Search for a word")
+            
         }
     }
 

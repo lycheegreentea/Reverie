@@ -20,7 +20,8 @@ struct ContentView: View {
             Tab("Favorites", systemImage: "append.page") {
                 FavoritesView()
                 }
-             
+            Tab("Yours", systemImage: "gear") {
+                }
             Tab("Settings", systemImage: "gear") {
                 Settings()
                 }

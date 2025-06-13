@@ -12,16 +12,15 @@ let calendar = Calendar.current
 let todayStart = calendar.startOfDay(for: Date())
 
 struct WordView: View {
-    var words: [Word] = loadWords()
-    var todaysWord: [Word] {
-            let today = Calendar.current.startOfDay(for: Date())
-            return words.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
-        }
+    @EnvironmentObject var wordStore: WordStore
+
+
+
     
     
     var body: some View {
         NavigationView {
-            List(todaysWord) { word in
+            List(wordStore.todaysWord) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)
@@ -53,7 +52,7 @@ struct WordView: View {
 
 #Preview {
     WordView()
-            .environmentObject(FavoriteManager())
-            .environmentObject(WordStore())
+        .environmentObject(WordStore())
+
 }
 

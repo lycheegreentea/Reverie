@@ -9,12 +9,13 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    let data = DataService()
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+        SimpleEntry(date: Date(), streak: data.todaysWord)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+        let entry = SimpleEntry(date: Date(), streak: data.todaysWord)
         completion(entry)
     }
 
@@ -25,7 +26,7 @@ struct Provider: TimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
+            let entry = SimpleEntry(date: entryDate, streak: data.todaysWord)
             entries.append(entry)
         }
 
@@ -40,19 +41,39 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let emoji: String
+    let streak: [Word]
 }
 
 struct WordWidgetExtensionEntryView : View {
+    let data = DataService()
+
     var entry: Provider.Entry
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+            
+                VStack(alignment: .leading) {
+                    HStack{
+                        Text(data.todaysWord[0].word)
+                            .font(.headline)
+            
+                    }
+                    
+                    
+                    Text(data.todaysWord[0].partOfSpeech)
+                        .font(.subheadline)
+                    Text(data.todaysWord[0].pronunciation)
+                        .font(.subheadline)
+                    Text(data.todaysWord[0].definition)
+                        .font(.body)
+                    Text(data.todaysWord[0].example)
+                        .font(.caption)
+                        .italic()
+                    Text(data.todaysWord[0].date.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption2)
+                        .foregroundColor(.gray)
+                }
+                
         }
     }
 }
@@ -76,9 +97,11 @@ struct WordWidgetExtension: Widget {
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     WordWidgetExtension()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    let data = DataService()
+
+    SimpleEntry(date: .now, streak: data.todaysWord)
+    SimpleEntry(date: .now, streak: data.todaysWord)
 }

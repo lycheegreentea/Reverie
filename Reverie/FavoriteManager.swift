@@ -54,4 +54,7 @@ class FavoriteManager: ObservableObject {
             }
         }
     }
+    
+
+    
 }

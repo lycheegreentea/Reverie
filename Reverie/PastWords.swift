@@ -27,54 +27,55 @@ struct PastWords: View {
         return onlyFavorites.filter { $0.word.localizedCaseInsensitiveContains(searchTerm)}
     }
     
-    //check if favoritesToggled then return favorite or regular list
-
     var body: some View {
-
-
         NavigationStack {
-            Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
-                .tint(Color.green)
-                .toggleStyle(.button)
-                //.labelStyle(.iconOnly)
-                .contentTransition(.opacity)
-            List(searchWords) { word in
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text(word.word)
-                            .font(.headline)
+            VStack{
+                    Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
+                        .tint(Color.green)
+                        .toggleStyle(.button)
+                        .contentTransition(.opacity)
+                    List(searchWords) { word in
+                        VStack(alignment: .leading) {
+                            HStack{
+                                Text(word.word)
+                                    .font(.headline)
+                                
+                                Spacer()
+                                Button(action: {
+                                    favoriteManager.toggleFavorite(for: word)
+                                }) {
+                                    Image(systemName: favoriteManager.isFavorite(word) ? "star.fill" : "star")
+                                        .foregroundColor(.yellow)
+                                }
+                                .buttonStyle(BorderlessButtonStyle())
+                            }
+                            
+                            Text(word.partOfSpeech)
+                                .font(.subheadline)
+                            Text(word.pronunciation)
+                                .font(.subheadline)
+                            Text(word.definition)
+                                .font(.body)
+                            Text(word.example)
+                                .font(.caption)
+                                .italic()
+                            Text(word.date.formatted(date: .abbreviated, time: .omitted))
+                                .font(.caption2)
+                                .foregroundColor(.gray)
+                        }
                         
-                        Spacer()
-                        Button(action: {
-                            favoriteManager.toggleFavorite(for: word)
-                                    }) {
-                                        Image(systemName: favoriteManager.isFavorite(word) ? "star.fill" : "star")
-                                            .foregroundColor(.yellow)
-                                    }
-                        .buttonStyle(BorderlessButtonStyle())
+                        .padding(4)
                     }
+                    .navigationTitle("Past Words")
+                    .searchable(text: $searchTerm, prompt: "Search for a word")
+                    .scrollContentBackground(.hidden)
                     
-                    Text(word.partOfSpeech)
-                        .font(.subheadline)
-                    Text(word.pronunciation)
-                        .font(.subheadline)
-                    Text(word.definition)
-                        .font(.body)
-                    Text(word.example)
-                        .font(.caption)
-                        .italic()
-                    Text(word.date.formatted(date: .abbreviated, time: .omitted))
-                        .font(.caption2)
-                        .foregroundColor(.gray)
                 }
-
-                .padding(4)
+                .background(Color(.systemGray6))
             }
-            .navigationTitle("Past Words")
             
-            .searchable(text: $searchTerm, prompt: "Search for a word")
-            
-        }
+        
+
     }
 
 }

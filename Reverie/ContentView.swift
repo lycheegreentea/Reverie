@@ -16,10 +16,6 @@ struct ContentView: View {
             Tab("Archive", systemImage: "append.page") {
                 PastWords()
                 }
-        
-            Tab("Favorites", systemImage: "append.page") {
-                FavoritesView()
-                }
             Tab("Yours", systemImage: "gear") {
                 }
             Tab("Settings", systemImage: "gear") {

@@ -12,33 +12,33 @@ struct PastWords: View {
     @EnvironmentObject var wordStore: WordStore
     @State private var searchTerm = ""
     @State private var favoritesToggled = true
-    
-    var filteredWords: [Word] {
-        guard !searchTerm.isEmpty else {
-            return wordStore.pastWords
+    var onlyFavorites: [Word] {
+        if(favoritesToggled){
+            return(wordStore.words.filter(favoriteManager.isFavorite))
         }
-        return wordStore.pastWords.filter { $0.word.localizedCaseInsensitiveContains(searchTerm)}
+        else{
+            return(wordStore.pastWords)
+        }
+    }
+    var searchWords: [Word] {
+        guard !searchTerm.isEmpty else {
+            return onlyFavorites
+        }
+        return onlyFavorites.filter { $0.word.localizedCaseInsensitiveContains(searchTerm)}
     }
     
+    //check if favoritesToggled then return favorite or regular list
 
     var body: some View {
 
-        let favoritesOnly = wordStore.words.filter(favoriteManager.isFavorite)
-        var chooseList: [Word] {
-            if(favoritesToggled){
-                return favoritesOnly
-            }
-            else{
-                return filteredWords
-            }
-        }
+
         NavigationStack {
             Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
                 .tint(Color.green)
                 .toggleStyle(.button)
                 //.labelStyle(.iconOnly)
                 .contentTransition(.opacity)
-            List(filteredWords) { word in
+            List(searchWords) { word in
                 VStack(alignment: .leading) {
                     HStack{
                         Text(word.word)

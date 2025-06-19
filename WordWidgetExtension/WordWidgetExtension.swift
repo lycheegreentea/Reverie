@@ -46,20 +46,15 @@ struct SimpleEntry: TimelineEntry {
 
 struct WordWidgetExtensionEntryView : View {
     let data = DataService()
-
+    
     var entry: Provider.Entry
-
+    
     var body: some View {
         VStack {
             
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text(data.todaysWord[0].word)
-                            .font(.headline)
-            
-                    }
-                    
-                    
+            VStack(alignment: .leading) {
+                if let firstWord = data.todaysWord.first {
+                    Text(firstWord.word)
                     Text(data.todaysWord[0].partOfSpeech)
                         .font(.subheadline)
                     Text(data.todaysWord[0].pronunciation)
@@ -72,30 +67,37 @@ struct WordWidgetExtensionEntryView : View {
                     Text(data.todaysWord[0].date.formatted(date: .abbreviated, time: .omitted))
                         .font(.caption2)
                         .foregroundColor(.gray)
+                    
+                } else {
+                    Text("No word available")
                 }
                 
-        }
-    }
-}
-
-struct WordWidgetExtension: Widget {
-    let kind: String = "WordWidgetExtension"
-
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                WordWidgetExtensionEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                WordWidgetExtensionEntryView(entry: entry)
-                    .padding()
-                    .background()
+                
+                
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
     }
 }
+    
+    struct WordWidgetExtension: Widget {
+        let kind: String = "WordWidgetExtension"
+        
+        var body: some WidgetConfiguration {
+            StaticConfiguration(kind: kind, provider: Provider()) { entry in
+                if #available(iOS 17.0, *) {
+                    WordWidgetExtensionEntryView(entry: entry)
+                        .containerBackground(.fill.tertiary, for: .widget)
+                } else {
+                    WordWidgetExtensionEntryView(entry: entry)
+                        .padding()
+                        .background()
+                }
+            }
+            .configurationDisplayName("My Widget")
+            .description("This is an example widget.")
+        }
+    }
+
 
 #Preview(as: .systemMedium) {
     WordWidgetExtension()

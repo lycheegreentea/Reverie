@@ -233,7 +233,770 @@
       "pronunciation": "HAL-see-un",
       "definition": "Calm, peaceful, or nostalgic of a better time.",
       "example": "They reminisced about the halcyon days of youth.",
-    }
+    },
+    {
+        "date": "2025-06-19",
+        "word": "abate",
+        "partOfSpeech": "verb",
+        "pronunciation": "uh-BAYT",
+        "definition": "To become less active, less intense, or less in amount.",
+        "example": "As the storm abated, the sun started to peek through the clouds."
+      },
+      {
+        "date": "2025-06-20",
+        "word": "benevolent",
+        "partOfSpeech": "adjective",
+        "pronunciation": "buh-NEV-uh-lunt",
+        "definition": "Well-meaning and kindly.",
+        "example": "The benevolent donor gave millions to charity."
+      },
+      {
+        "date": "2025-06-21",
+        "word": "cajole",
+        "partOfSpeech": "verb",
+        "pronunciation": "kuh-JOHL",
+        "definition": "To persuade with flattery or gentle urging.",
+        "example": "She cajoled her parents into letting her go to the party."
+      },
+      {
+        "date": "2025-06-22",
+        "word": "dauntless",
+        "partOfSpeech": "adjective",
+        "pronunciation": "DAWNT-lis",
+        "definition": "Showing fearlessness and determination.",
+        "example": "The dauntless hero marched into battle without hesitation."
+      },
+      {
+        "date": "2025-06-23",
+        "word": "ebullient",
+        "partOfSpeech": "adjective",
+        "pronunciation": "ih-BUHL-yuhnt",
+        "definition": "Cheerful and full of energy.",
+        "example": "Her ebullient personality lit up every room she entered."
+      },
+      {
+        "date": "2025-06-24",
+        "word": "facilitate",
+        "partOfSpeech": "verb",
+        "pronunciation": "fuh-SIL-i-tayt",
+        "definition": "To make an action or process easier.",
+        "example": "Technology can facilitate communication across the globe."
+      },
+      {
+        "date": "2025-06-25",
+        "word": "garner",
+        "partOfSpeech": "verb",
+        "pronunciation": "GAHR-ner",
+        "definition": "To gather or collect something, especially information or approval.",
+        "example": "She garnered praise for her thoughtful presentation."
+      },
+      {
+        "date": "2025-06-26",
+        "word": "hackneyed",
+        "partOfSpeech": "adjective",
+        "pronunciation": "HAK-need",
+        "definition": "Lacking significance due to overuse; unoriginal and trite.",
+        "example": "The hackneyed phrase failed to impress the judges."
+      },
+      {
+        "date": "2025-06-27",
+        "word": "iconoclast",
+        "partOfSpeech": "noun",
+        "pronunciation": "eye-KON-uh-klast",
+        "definition": "A person who attacks cherished beliefs or institutions.",
+        "example": "The artist was seen as an iconoclast for challenging traditional styles."
+      },
+      {
+        "date": "2025-06-28",
+        "word": "juxtapose",
+        "partOfSpeech": "verb",
+        "pronunciation": "JUK-stuh-pohz",
+        "definition": "To place close together for contrasting effect.",
+        "example": "The documentary juxtaposed scenes of war and peace."
+      },
+      {
+          "date": "2025-06-29",
+          "word": "kinetic",
+          "partOfSpeech": "adjective",
+          "pronunciation": "kih-NET-ik",
+          "definition": "Relating to or resulting from motion.",
+          "example": "The kinetic energy of the moving car was enormous."
+        },
+        {
+          "date": "2025-06-30",
+          "word": "laconic",
+          "partOfSpeech": "adjective",
+          "pronunciation": "luh-KON-ik",
+          "definition": "Using very few words.",
+          "example": "His laconic reply suggested disinterest."
+        },
+        {
+          "date": "2025-07-01",
+          "word": "maverick",
+          "partOfSpeech": "noun",
+          "pronunciation": "MAV-rik",
+          "definition": "An independent individual who does not go along with a group.",
+          "example": "She’s a maverick in the tech industry, always doing things her own way."
+        },
+        {
+          "date": "2025-07-02",
+          "word": "nefarious",
+          "partOfSpeech": "adjective",
+          "pronunciation": "nuh-FAIR-ee-us",
+          "definition": "Wicked or criminal.",
+          "example": "The villain’s nefarious scheme was foiled by the hero."
+        },
+        {
+          "date": "2025-07-03",
+          "word": "obdurate",
+          "partOfSpeech": "adjective",
+          "pronunciation": "OB-duh-rit",
+          "definition": "Stubbornly refusing to change one’s opinion.",
+          "example": "Despite the protests, the leader remained obdurate."
+        },
+        {
+          "date": "2025-07-04",
+          "word": "palpable",
+          "partOfSpeech": "adjective",
+          "pronunciation": "PAL-puh-bul",
+          "definition": "So intense as to seem almost tangible.",
+          "example": "The tension in the courtroom was palpable."
+        },
+        {
+          "date": "2025-07-05",
+          "word": "quixotic",
+          "partOfSpeech": "adjective",
+          "pronunciation": "kwik-SOT-ik",
+          "definition": "Exceedingly idealistic; unrealistic and impractical.",
+          "example": "His quixotic dreams of world peace amused his colleagues."
+        },
+        {
+          "date": "2025-07-06",
+          "word": "recalcitrant",
+          "partOfSpeech": "adjective",
+          "pronunciation": "ri-KAL-si-truhnt",
+          "definition": "Stubbornly disobedient, resisting authority.",
+          "example": "The recalcitrant student refused to follow the rules."
+        },
+        {
+          "date": "2025-07-07",
+          "word": "sagacious",
+          "partOfSpeech": "adjective",
+          "pronunciation": "suh-GAY-shus",
+          "definition": "Having or showing keen mental discernment and good judgment.",
+          "example": "Her sagacious advice helped us avoid a major setback."
+        },
+        {
+          "date": "2025-07-08",
+          "word": "taciturn",
+          "partOfSpeech": "adjective",
+          "pronunciation": "TASS-uh-turn",
+          "definition": "Reserved or uncommunicative in speech.",
+          "example": "The taciturn boy rarely spoke in class."
+        },
+        {
+          "date": "2025-07-09",
+          "word": "ubiquitous",
+          "partOfSpeech": "adjective",
+          "pronunciation": "yoo-BIK-wi-tus",
+          "definition": "Present, appearing, or found everywhere.",
+          "example": "Smartphones have become ubiquitous in modern society."
+        },
+        {
+          "date": "2025-07-10",
+          "word": "vacillate",
+          "partOfSpeech": "verb",
+          "pronunciation": "VAS-uh-layt",
+          "definition": "To waver between different opinions or actions.",
+          "example": "He vacillated between going to law school and pursuing music."
+        },
+        {
+          "date": "2025-07-11",
+          "word": "wanton",
+          "partOfSpeech": "adjective",
+          "pronunciation": "WAHN-tuhn",
+          "definition": "Deliberate and unprovoked (often cruel or violent).",
+          "example": "The vandalism was a wanton act of destruction."
+        },
+        {
+          "date": "2025-07-12",
+          "word": "xenophobia",
+          "partOfSpeech": "noun",
+          "pronunciation": "zen-uh-FOH-bee-uh",
+          "definition": "Dislike of or prejudice against people from other countries.",
+          "example": "The politician was accused of promoting xenophobia."
+        },
+        {
+          "date": "2025-07-13",
+          "word": "yoke",
+          "partOfSpeech": "verb",
+          "pronunciation": "yohk",
+          "definition": "To join together or harness (usually for work).",
+          "example": "The two oxen were yoked together to pull the cart."
+        },
+        {
+          "date": "2025-07-14",
+          "word": "zealot",
+          "partOfSpeech": "noun",
+          "pronunciation": "ZEL-ut",
+          "definition": "A person who is fanatical and uncompromising in pursuit of their ideals.",
+          "example": "Religious zealots can sometimes become intolerant of other views."
+        },
+        {
+            "date": "2025-07-15",
+            "word": "abstruse",
+            "partOfSpeech": "adjective",
+            "pronunciation": "ab-STROOS",
+            "definition": "Difficult to understand; obscure.",
+            "example": "The professor's lectures were so abstruse that students struggled to keep up."
+          },
+          {
+            "date": "2025-07-16",
+            "word": "bellicose",
+            "partOfSpeech": "adjective",
+            "pronunciation": "BEL-ih-kohs",
+            "definition": "Demonstrating aggression and willingness to fight.",
+            "example": "The bellicose tone of the debate alarmed the moderator."
+          },
+          {
+            "date": "2025-07-17",
+            "word": "capricious",
+            "partOfSpeech": "adjective",
+            "pronunciation": "kuh-PRISH-us",
+            "definition": "Given to sudden and unaccountable changes of mood or behavior.",
+            "example": "His capricious nature made him difficult to work with."
+          },
+          {
+            "date": "2025-07-18",
+            "word": "deleterious",
+            "partOfSpeech": "adjective",
+            "pronunciation": "del-uh-TEER-ee-us",
+            "definition": "Causing harm or damage.",
+            "example": "The policy may have a deleterious effect on the environment."
+          },
+          {
+            "date": "2025-07-19",
+            "word": "effervescent",
+            "partOfSpeech": "adjective",
+            "pronunciation": "ef-er-VES-uhnt",
+            "definition": "Vivacious and enthusiastic.",
+            "example": "Her effervescent personality made her the life of every party."
+          },
+          {
+            "date": "2025-07-20",
+            "word": "fastidious",
+            "partOfSpeech": "adjective",
+            "pronunciation": "fas-TID-ee-us",
+            "definition": "Very attentive to detail; hard to please.",
+            "example": "He was fastidious about keeping his desk clean."
+          },
+          {
+            "date": "2025-07-21",
+            "word": "garrulous",
+            "partOfSpeech": "adjective",
+            "pronunciation": "GAIR-uh-lus",
+            "definition": "Excessively talkative.",
+            "example": "The garrulous tour guide told stories nonstop."
+          },
+          {
+            "date": "2025-07-22",
+            "word": "harangue",
+            "partOfSpeech": "noun",
+            "pronunciation": "huh-RANG",
+            "definition": "A lengthy and aggressive speech.",
+            "example": "He launched into a harangue about the inefficiency of the committee."
+          },
+          {
+            "date": "2025-07-23",
+            "word": "intransigent",
+            "partOfSpeech": "adjective",
+            "pronunciation": "in-TRAN-suh-jent",
+            "definition": "Unwilling or refusing to change one’s views or to agree.",
+            "example": "Her intransigent stance stalled the negotiations."
+          },
+          {
+            "date": "2025-07-24",
+            "word": "jubilant",
+            "partOfSpeech": "adjective",
+            "pronunciation": "JOO-buh-luhnt",
+            "definition": "Feeling or expressing great joy.",
+            "example": "The crowd was jubilant after the team’s victory."
+          },
+          {
+              "date": "2025-07-25",
+              "word": "kudos",
+              "partOfSpeech": "noun",
+              "pronunciation": "KOO-dohz",
+              "definition": "Praise and honor received for an achievement.",
+              "example": "She received kudos for organizing the successful fundraiser."
+            },
+            {
+              "date": "2025-07-26",
+              "word": "lucid",
+              "partOfSpeech": "adjective",
+              "pronunciation": "LOO-sid",
+              "definition": "Expressed clearly; easy to understand.",
+              "example": "The speaker gave a lucid explanation of the complex topic."
+            },
+            {
+              "date": "2025-07-27",
+              "word": "mollify",
+              "partOfSpeech": "verb",
+              "pronunciation": "MOL-uh-fy",
+              "definition": "To calm or soothe someone’s anger or anxiety.",
+              "example": "The apology helped mollify the upset customer."
+            },
+            {
+              "date": "2025-07-28",
+              "word": "nadir",
+              "partOfSpeech": "noun",
+              "pronunciation": "NAY-deer",
+              "definition": "The lowest point in the fortunes of a person or organization.",
+              "example": "The company reached its nadir during the financial crisis."
+            },
+            {
+              "date": "2025-07-29",
+              "word": "opulent",
+              "partOfSpeech": "adjective",
+              "pronunciation": "OP-yuh-luhnt",
+              "definition": "Ostentatiously rich and luxurious.",
+              "example": "They stayed in an opulent hotel with marble floors and gold fixtures."
+            },
+            {
+              "date": "2025-07-30",
+              "word": "pariah",
+              "partOfSpeech": "noun",
+              "pronunciation": "puh-RYE-uh",
+              "definition": "An outcast.",
+              "example": "After the scandal, he became a social pariah."
+            },
+            {
+              "date": "2025-07-31",
+              "word": "querulous",
+              "partOfSpeech": "adjective",
+              "pronunciation": "KWER-yuh-lus",
+              "definition": "Complaining in a whining manner.",
+              "example": "The querulous passenger kept demanding to speak with a manager."
+            },
+            {
+              "date": "2025-08-01",
+              "word": "rescind",
+              "partOfSpeech": "verb",
+              "pronunciation": "ri-SIND",
+              "definition": "To revoke or cancel.",
+              "example": "The university decided to rescind his admission due to academic dishonesty."
+            },
+            {
+              "date": "2025-08-02",
+              "word": "spurious",
+              "partOfSpeech": "adjective",
+              "pronunciation": "SPYUR-ee-us",
+              "definition": "Not being what it purports to be; false or fake.",
+              "example": "The evidence was later revealed to be spurious."
+            },
+            {
+              "date": "2025-08-03",
+              "word": "tantamount",
+              "partOfSpeech": "adjective",
+              "pronunciation": "TAN-tuh-mount",
+              "definition": "Equivalent in seriousness to; virtually the same as.",
+              "example": "Refusing to respond was tantamount to an admission of guilt."
+            },
+            {
+              "date": "2025-08-04",
+              "word": "unctuous",
+              "partOfSpeech": "adjective",
+              "pronunciation": "UNGK-choo-us",
+              "definition": "Excessively or ingratiatingly flattering; oily.",
+              "example": "The waiter’s unctuous tone made us uncomfortable."
+            },
+            {
+              "date": "2025-08-05",
+              "word": "vapid",
+              "partOfSpeech": "adjective",
+              "pronunciation": "VAP-id",
+              "definition": "Offering nothing that is stimulating or challenging.",
+              "example": "The movie’s plot was vapid and predictable."
+            },
+            {
+              "date": "2025-08-06",
+              "word": "wane",
+              "partOfSpeech": "verb",
+              "pronunciation": "wayn",
+              "definition": "To decrease in size, extent, or degree.",
+              "example": "His enthusiasm for the job began to wane."
+            },
+            {
+              "date": "2025-08-07",
+              "word": "xenial",
+              "partOfSpeech": "adjective",
+              "pronunciation": "ZEE-nee-uhl",
+              "definition": "Relating to hospitality toward guests.",
+              "example": "They were known for their xenial nature and generous meals."
+            },
+            {
+              "date": "2025-08-08",
+              "word": "yearn",
+              "partOfSpeech": "verb",
+              "pronunciation": "yurn",
+              "definition": "To have an intense feeling of longing for something.",
+              "example": "He yearned for the comfort of home."
+            },
+            {
+              "date": "2025-08-09",
+              "word": "zephyr",
+              "partOfSpeech": "noun",
+              "pronunciation": "ZEH-fur",
+              "definition": "A gentle breeze.",
+              "example": "A cool zephyr swept across the field."
+            },
+            {
+              "date": "2025-08-10",
+              "word": "alacrity",
+              "partOfSpeech": "noun",
+              "pronunciation": "uh-LAK-ri-tee",
+              "definition": "Brisk and cheerful readiness.",
+              "example": "She accepted the invitation with alacrity."
+            },
+            {
+              "date": "2025-08-11",
+              "word": "bombastic",
+              "partOfSpeech": "adjective",
+              "pronunciation": "bom-BAS-tik",
+              "definition": "High-sounding but with little meaning; inflated.",
+              "example": "The politician’s bombastic rhetoric didn’t sway the audience."
+            },
+            {
+              "date": "2025-08-12",
+              "word": "circumspect",
+              "partOfSpeech": "adjective",
+              "pronunciation": "SUR-kum-spekt",
+              "definition": "Wary and unwilling to take risks.",
+              "example": "She was circumspect about investing in the new startup."
+            },
+            {
+              "date": "2025-08-13",
+              "word": "disparage",
+              "partOfSpeech": "verb",
+              "pronunciation": "dis-PAIR-ij",
+              "definition": "To regard or represent as being of little worth.",
+              "example": "He never missed an opportunity to disparage his rivals."
+            },
+            {
+              "date": "2025-08-14",
+              "word": "enervate",
+              "partOfSpeech": "verb",
+              "pronunciation": "EN-er-vayt",
+              "definition": "To weaken or drain energy from.",
+              "example": "The intense heat enervated everyone at the event."
+            },
+            {
+              "date": "2025-08-15",
+              "word": "fortuitous",
+              "partOfSpeech": "adjective",
+              "pronunciation": "for-TOO-i-tus",
+              "definition": "Happening by chance, often in a lucky way.",
+              "example": "It was fortuitous that they met on the same train."
+            },
+            {
+              "date": "2025-08-16",
+              "word": "gregarious",
+              "partOfSpeech": "adjective",
+              "pronunciation": "gruh-GAIR-ee-us",
+              "definition": "Sociable; fond of company.",
+              "example": "She’s a gregarious person who enjoys being around others."
+            },
+            {
+              "date": "2025-08-17",
+              "word": "hegemony",
+              "partOfSpeech": "noun",
+              "pronunciation": "hih-JEM-uh-nee",
+              "definition": "Leadership or dominance, especially by one country or group.",
+              "example": "The empire had hegemony over much of the known world."
+            },
+            {
+              "date": "2025-08-18",
+              "word": "impecunious",
+              "partOfSpeech": "adjective",
+              "pronunciation": "im-puh-KYOO-nee-us",
+              "definition": "Having little or no money.",
+              "example": "Despite his talent, he remained impecunious for years."
+            },
+            {
+              "date": "2025-08-19",
+              "word": "jocular",
+              "partOfSpeech": "adjective",
+              "pronunciation": "JOK-yuh-lur",
+              "definition": "Fond of or characterized by joking; humorous.",
+              "example": "His jocular manner made him popular at parties."
+            },
+            {
+              "date": "2025-08-20",
+              "word": "knell",
+              "partOfSpeech": "noun",
+              "pronunciation": "nel",
+              "definition": "The sound of a bell, especially when rung solemnly for a death or funeral.",
+              "example": "The knell signaled the end of an era."
+            },
+            
+              {
+                "date": "2025-08-21",
+                "word": "lurid",
+                "partOfSpeech": "adjective",
+                "pronunciation": "LOO-rid",
+                "definition": "Very vivid in color, especially so as to create an unpleasantly harsh effect.",
+                "example": "The tabloid was filled with lurid details of the scandal."
+              },
+              {
+                "date": "2025-08-22",
+                "word": "maudlin",
+                "partOfSpeech": "adjective",
+                "pronunciation": "MAWD-lin",
+                "definition": "Self-pityingly or tearfully sentimental.",
+                "example": "She became maudlin after a few drinks and began reminiscing sadly."
+              },
+              {
+                "date": "2025-08-23",
+                "word": "neophyte",
+                "partOfSpeech": "noun",
+                "pronunciation": "NEE-uh-fyt",
+                "definition": "A person who is new to a subject, skill, or belief.",
+                "example": "Even as a neophyte, she quickly mastered the basics of coding."
+              },
+              {
+                "date": "2025-08-24",
+                "word": "obsequious",
+                "partOfSpeech": "adjective",
+                "pronunciation": "uhb-SEE-kwee-us",
+                "definition": "Obedient or attentive to an excessive degree.",
+                "example": "The intern’s obsequious behavior annoyed his coworkers."
+              },
+              {
+                "date": "2025-08-25",
+                "word": "perfunctory",
+                "partOfSpeech": "adjective",
+                "pronunciation": "per-FUNK-tuh-ree",
+                "definition": "Carried out with minimum effort or reflection.",
+                "example": "She gave a perfunctory nod and walked away."
+              },
+              {
+                "date": "2025-08-26",
+                "word": "quandary",
+                "partOfSpeech": "noun",
+                "pronunciation": "KWON-duh-ree",
+                "definition": "A state of perplexity or uncertainty over what to do.",
+                "example": "He was in a quandary about which job offer to accept."
+              },
+              {
+                "date": "2025-08-27",
+                "word": "reticent",
+                "partOfSpeech": "adjective",
+                "pronunciation": "RET-uh-sent",
+                "definition": "Not revealing one's thoughts or feelings readily.",
+                "example": "She was reticent about her plans for the future."
+              },
+              {
+                "date": "2025-08-28",
+                "word": "sanguine",
+                "partOfSpeech": "adjective",
+                "pronunciation": "SANG-gwin",
+                "definition": "Optimistic or positive, especially in a bad situation.",
+                "example": "Despite the setbacks, he remained sanguine about the outcome."
+              },
+              {
+                "date": "2025-08-29",
+                "word": "tacit",
+                "partOfSpeech": "adjective",
+                "pronunciation": "TASS-it",
+                "definition": "Understood or implied without being stated.",
+                "example": "There was a tacit agreement not to speak of the incident."
+              },
+              {
+                "date": "2025-08-30",
+                "word": "unctuous",
+                "partOfSpeech": "adjective",
+                "pronunciation": "UNGK-choo-us",
+                "definition": "Excessively flattering or insincere.",
+                "example": "His unctuous charm fooled no one."
+              },
+              {
+                "date": "2025-08-31",
+                "word": "venerate",
+                "partOfSpeech": "verb",
+                "pronunciation": "VEN-uh-rayt",
+                "definition": "To regard with great respect.",
+                "example": "Many cultures venerate their ancestors."
+              },
+              {
+                "date": "2025-09-01",
+                "word": "wily",
+                "partOfSpeech": "adjective",
+                "pronunciation": "WYE-lee",
+                "definition": "Skilled at gaining an advantage, especially deceitfully.",
+                "example": "The wily fox escaped from the trap."
+              },
+              {
+                "date": "2025-09-02",
+                "word": "zealous",
+                "partOfSpeech": "adjective",
+                "pronunciation": "ZEL-us",
+                "definition": "Having or showing zeal; passionately devoted.",
+                "example": "She was zealous in her advocacy for climate reform."
+              },
+              {
+                "date": "2025-09-03",
+                "word": "avarice",
+                "partOfSpeech": "noun",
+                "pronunciation": "AV-uh-ris",
+                "definition": "Extreme greed for wealth or material gain.",
+                "example": "His avarice knew no bounds."
+              },
+              {
+                "date": "2025-09-04",
+                "word": "baleful",
+                "partOfSpeech": "adjective",
+                "pronunciation": "BAYL-ful",
+                "definition": "Threatening harm; menacing.",
+                "example": "She gave him a baleful glare."
+              },
+              {
+                "date": "2025-09-05",
+                "word": "calumny",
+                "partOfSpeech": "noun",
+                "pronunciation": "KAL-um-nee",
+                "definition": "A false and slanderous statement.",
+                "example": "The article was full of calumny against the candidate."
+              },
+              {
+                "date": "2025-09-06",
+                "word": "demagogue",
+                "partOfSpeech": "noun",
+                "pronunciation": "DEM-uh-gog",
+                "definition": "A political leader who seeks support by appealing to desires and prejudices rather than using rational argument.",
+                "example": "The demagogue stirred up the crowd with emotional rhetoric."
+              },
+              {
+                "date": "2025-09-07",
+                "word": "efficacy",
+                "partOfSpeech": "noun",
+                "pronunciation": "EF-ih-kuh-see",
+                "definition": "The ability to produce a desired or intended result.",
+                "example": "They questioned the efficacy of the new policy."
+              },
+              {
+                "date": "2025-09-08",
+                "word": "fallacious",
+                "partOfSpeech": "adjective",
+                "pronunciation": "fuh-LAY-shus",
+                "definition": "Based on a mistaken belief.",
+                "example": "His argument was fallacious and misleading."
+              },
+              {
+                "date": "2025-09-09",
+                "word": "grandiloquent",
+                "partOfSpeech": "adjective",
+                "pronunciation": "gran-DIL-uh-kwent",
+                "definition": "Pompous or extravagant in language or manner.",
+                "example": "The speech was full of grandiloquent statements."
+              },
+              {
+                "date": "2025-09-10",
+                "word": "hapless",
+                "partOfSpeech": "adjective",
+                "pronunciation": "HAP-lis",
+                "definition": "Unfortunate and unlucky.",
+                "example": "The hapless tourist lost his passport on the first day."
+              },
+              {
+                "date": "2025-09-11",
+                "word": "ignominious",
+                "partOfSpeech": "adjective",
+                "pronunciation": "ig-nuh-MIN-ee-us",
+                "definition": "Deserving or causing public disgrace or shame.",
+                "example": "The team’s ignominious defeat shocked fans."
+              },
+              {
+                "date": "2025-09-12",
+                "word": "jettison",
+                "partOfSpeech": "verb",
+                "pronunciation": "JET-uh-sun",
+                "definition": "To throw or drop something from an aircraft or ship.",
+                "example": "They had to jettison supplies to lighten the load."
+              },
+              {
+                "date": "2025-09-13",
+                "word": "kowtow",
+                "partOfSpeech": "verb",
+                "pronunciation": "KOW-tow",
+                "definition": "To act in an excessively subservient manner.",
+                "example": "He refused to kowtow to the demands of the board."
+              },
+              {
+                "date": "2025-09-14",
+                "word": "libertine",
+                "partOfSpeech": "noun",
+                "pronunciation": "LIB-er-teen",
+                "definition": "A person who behaves without moral principles.",
+                "example": "The libertine was infamous for his reckless lifestyle."
+              },
+              {
+                "date": "2025-09-15",
+                "word": "miscreant",
+                "partOfSpeech": "noun",
+                "pronunciation": "MIS-kree-uhnt",
+                "definition": "A person who behaves badly or in a way that breaks the law.",
+                "example": "Police arrested several miscreants during the riot."
+              },
+              {
+                "date": "2025-09-16",
+                "word": "noxious",
+                "partOfSpeech": "adjective",
+                "pronunciation": "NOK-shus",
+                "definition": "Harmful, poisonous, or very unpleasant.",
+                "example": "The noxious fumes forced everyone to evacuate the building."
+              },
+              {
+                "date": "2025-09-17",
+                "word": "ostracize",
+                "partOfSpeech": "verb",
+                "pronunciation": "OS-truh-size",
+                "definition": "To exclude from a society or group.",
+                "example": "He was ostracized by his former friends after the betrayal."
+              },
+              {
+                "date": "2025-09-18",
+                "word": "panacea",
+                "partOfSpeech": "noun",
+                "pronunciation": "pan-uh-SEE-uh",
+                "definition": "A solution or remedy for all difficulties or diseases.",
+                "example": "There is no panacea for the world's economic problems."
+              },
+              {
+                "date": "2025-09-19",
+                "word": "quell",
+                "partOfSpeech": "verb",
+                "pronunciation": "kwel",
+                "definition": "To suppress or put an end to.",
+                "example": "Troops were sent in to quell the unrest."
+              },
+              {
+                "date": "2025-09-20",
+                "word": "reproach",
+                "partOfSpeech": "verb",
+                "pronunciation": "ri-PROHCH",
+                "definition": "To express disapproval or disappointment.",
+                "example": "He reproached her for being late to the meeting."
+              },
+              {
+                "date": "2025-09-21",
+                "word": "soporific",
+                "partOfSpeech": "adjective",
+                "pronunciation": "sop-uh-RIF-ik",
+                "definition": "Tending to induce drowsiness or sleep.",
+                "example": "The professor's voice was almost soporific in tone."
+              },
+            
+
   ]
 
    

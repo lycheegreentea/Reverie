@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DailyQuote: View {
-    @AppStorage("TEST", store: UserDefaults(suiteName: "group.com.laurencechen.Reverie")!) var widgetWord = 0
     
     
     var body: some View {

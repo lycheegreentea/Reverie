@@ -15,6 +15,21 @@ enum Appearance: String, CaseIterable, Identifiable {
 }
 
 struct Settings: View {
+    enum Person: String, CaseIterable, Identifiable {
+        case Roosevelt, Socrates, strawberry
+        var id: Self { self }
+    }
+
+    @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Socrates.rawValue
+    
+    private var selectedPerson: Binding<Person> {
+        Binding(
+            get: { Person(rawValue: selectedPersonRaw) ?? .Socrates },
+            set: { selectedPersonRaw = $0.rawValue }
+        )
+    }
+    
+    
     @AppStorage("appearance") private var selectedAppearance: Appearance = .system
         
         var colorScheme: ColorScheme? {
@@ -28,28 +43,43 @@ struct Settings: View {
             }
         }
         
-        var body: some View {
-            
-            
-            VStack {
-                Spacer()
-                Text("Settings")
-                    .font(.title)
-                Picker("Appearance", selection: $selectedAppearance) {
-                    ForEach(Appearance.allCases) { mode in
-                        Text(mode.rawValue).tag(mode)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                Spacer()
-            }
-            .preferredColorScheme(colorScheme)
-        }
-
+    var body: some View {
         
-}
+        Spacer()
+
+        VStack {
+            Text("Settings")
+                .font(.title)
+            Picker("Appearance", selection: $selectedAppearance) {
+                ForEach(Appearance.allCases) { mode in
+                    Text(mode.rawValue).tag(mode)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+            
+        }
+        .preferredColorScheme(colorScheme)
+        
+        VStack {
+            Text("Quote Person")
+                .font(.title)
+            Picker("Select a person", selection: selectedPerson) {
+                        ForEach(Person.allCases) { person in
+                            Text(person.rawValue).tag(person)
+                        }
+                    }
+           
+            }
+        .padding()
+        .pickerStyle(.segmented)
+        
+        Spacer()
+
+        }
+        
+    }
+
 
 #Preview {
     Settings()

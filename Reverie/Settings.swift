@@ -6,42 +6,54 @@
 //
 
 import SwiftUI
-enum Appearance: String, CaseIterable, Identifiable {
-    case system = "System"
-    case light = "Light"
-    case dark = "Dark"
-    
-    var id: String { self.rawValue }
-}
 
 struct Settings: View {
+    @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Socrates.rawValue
     enum Person: String, CaseIterable, Identifiable {
         case Roosevelt, Socrates, strawberry
-        var id: Self { self }
+        var id: String { self.rawValue }
+    }
+    @AppStorage("appearance") private var selectedAppearance: Appearance = .system
+
+    enum Appearance: String, CaseIterable, Identifiable {
+        case system = "System"
+        case light = "Light"
+        case dark = "Dark"
+        
+        var id: String { self.rawValue }
+    }
+    
+    var colorScheme: ColorScheme? {
+                switch selectedAppearance {
+                case .light:
+                    return .light
+                case .dark:
+                    return .dark
+                case .system:
+                    return nil
+                }
+            }
+    
+    
+
+    private var selectedColor: Binding<Appearance> {
+        Binding(
+            get: { Appearance(rawValue: selectedAppearance.rawValue) ?? .light },
+            set: { _ in Appearance(rawValue: selectedAppearance.rawValue) ?? .light }
+        )
     }
 
-    @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Socrates.rawValue
-    
     private var selectedPerson: Binding<Person> {
         Binding(
             get: { Person(rawValue: selectedPersonRaw) ?? .Socrates },
             set: { selectedPersonRaw = $0.rawValue }
         )
     }
+
+       
     
     
-    @AppStorage("appearance") private var selectedAppearance: Appearance = .system
-        
-        var colorScheme: ColorScheme? {
-            switch selectedAppearance {
-            case .light:
-                return .light
-            case .dark:
-                return .dark
-            case .system:
-                return nil
-            }
-        }
+    
         
     var body: some View {
         
@@ -50,16 +62,9 @@ struct Settings: View {
         VStack {
             Text("Settings")
                 .font(.title)
-            Picker("Appearance", selection: $selectedAppearance) {
-                ForEach(Appearance.allCases) { mode in
-                    Text(mode.rawValue).tag(mode)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
+ 
             
         }
-        .preferredColorScheme(colorScheme)
         
         VStack {
             Text("Quote Person")
@@ -74,11 +79,30 @@ struct Settings: View {
         .padding()
         .pickerStyle(.segmented)
         
+        
+        VStack {
+            Spacer()
+            Text("Settings")
+                .font(.title)
+            Picker("Appearance", selection: $selectedAppearance) {
+                ForEach(Appearance.allCases) { mode in
+                    Text(mode.rawValue).tag(mode)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+            
+        }
+        .preferredColorScheme(colorScheme)
+
         Spacer()
 
         }
+
+    
         
     }
+
 
 
 #Preview {

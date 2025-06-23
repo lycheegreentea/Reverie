@@ -13,7 +13,6 @@ let todayStart = calendar.startOfDay(for: Date())
 
 struct WordView: View {
     @EnvironmentObject var wordStore: WordStore
-    @AppStorage("appearance") private var selectedAppearance: Appearance = .system
 
     var body: some View {
         NavigationView {
@@ -41,6 +40,7 @@ struct WordView: View {
                 }
                 }
                 .navigationTitle("The Daily Word")
+
             }
 
         }

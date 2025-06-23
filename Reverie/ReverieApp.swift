@@ -16,6 +16,7 @@ struct ReverieApp: App {
                 .environmentObject(favoriteManager)
                 .environmentObject(wordStore)
         }
+        
     }
 }
 

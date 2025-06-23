@@ -7,21 +7,23 @@
 
 import SwiftUI
 
+enum Appearance: String, CaseIterable, Identifiable {
+    case system = "System"
+    case light = "Light"
+    case dark = "Dark"
+    
+    var id: String { self.rawValue }
+}
+
 struct Settings: View {
     @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Socrates.rawValue
     enum Person: String, CaseIterable, Identifiable {
         case Roosevelt, Socrates, strawberry
         var id: String { self.rawValue }
     }
-    @AppStorage("appearance") private var selectedAppearance: Appearance = .system
 
-    enum Appearance: String, CaseIterable, Identifiable {
-        case system = "System"
-        case light = "Light"
-        case dark = "Dark"
-        
-        var id: String { self.rawValue }
-    }
+    @AppStorage("appearance") public var selectedAppearance: Appearance = .system
+
     
     var colorScheme: ColorScheme? {
                 switch selectedAppearance {
@@ -36,12 +38,7 @@ struct Settings: View {
     
     
 
-    private var selectedColor: Binding<Appearance> {
-        Binding(
-            get: { Appearance(rawValue: selectedAppearance.rawValue) ?? .light },
-            set: { _ in Appearance(rawValue: selectedAppearance.rawValue) ?? .light }
-        )
-    }
+
 
     private var selectedPerson: Binding<Person> {
         Binding(

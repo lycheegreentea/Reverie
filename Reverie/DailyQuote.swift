@@ -11,12 +11,10 @@ struct Quote: Codable, Identifiable {
     let quote: String
     let author: String
     var id: String { quote }
-
 }
 
 class QuoteLoader {
     static func loadQuotes() -> [Quote] {
-        print("🔍 Attempting to load Quotes.json...")
         guard let url = Bundle.main.url(forResource: "Quotes", withExtension: "json") else {
             print("quotes.json not found.")
             return []
@@ -25,7 +23,6 @@ class QuoteLoader {
         do {
             let data = try Data(contentsOf: url)
             let quotes = try JSONDecoder().decode([Quote].self, from: data)
-            print("Loaded \(quotes.count) quotes.")
             return quotes
         } catch {
             print("Failed to decode quotes: \(error)")
@@ -37,26 +34,42 @@ class QuoteView: ObservableObject {
     @Published var quotes: [Quote] = QuoteLoader.loadQuotes()
 }
 
+
+class QuoteFilter{
+    
+}
+
 struct DailyQuote: View {
-    @StateObject private var quoteViewer = QuoteView()
-    init() {
-        print("📦 DailyQuote view initialized")
-    }
+    private var quoteViewer = QuoteView()
+    @State private var selectedQuote: Quote? = nil
+
+    
     var body: some View {
         NavigationView {
-            List(quoteViewer.quotes) { quote in
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text(quote.quote)
-                            .font(.headline)
+            
+                if let quote = selectedQuote {
+                    VStack(alignment: .leading) {
+                        VStack{
+                            Text(quote.quote)
+                                .font(.headline)
+                            Text(quote.author)
+                                .font(.subheadline)
+                            
+                        
                         
                     }
-                    
                 }
+                    
             }
-            .navigationTitle("The Daily Word")
+            
+            }
+        .navigationTitle("The Daily Word")
+        .onAppear {
+            let aristotleQuotes = quoteViewer.quotes.filter { $0.author == "Aristotle" }
+            selectedQuote = aristotleQuotes.randomElement()
 
         }
+        
     }
 }
 

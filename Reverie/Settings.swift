@@ -46,33 +46,25 @@ struct Settings: View {
             set: { selectedPersonRaw = $0.rawValue }
         )
     }
-
-       
-    
-    
-    
-        
     var body: some View {
         
         Spacer()
-
+        
         VStack {
             Text("Settings")
                 .font(.title)
- 
-            
         }
         
         VStack {
             Text("Quote Person")
                 .font(.title)
             Picker("Select a person", selection: selectedPerson) {
-                        ForEach(Person.allCases) { person in
-                            Text(person.rawValue).tag(person)
-                        }
-                    }
-           
+                ForEach(Person.allCases) { person in
+                    Text(person.rawValue).tag(person)
+                }
             }
+            
+        }
         .padding()
         .pickerStyle(.segmented)
         
@@ -88,20 +80,12 @@ struct Settings: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
-            
         }
         .preferredColorScheme(colorScheme)
-
-        Spacer()
-
-        }
-
-    
         
+        Spacer()
     }
-
-
-
+    }
 #Preview {
     Settings()
 }

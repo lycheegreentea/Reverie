@@ -16,9 +16,9 @@ enum Appearance: String, CaseIterable, Identifiable {
 }
 
 struct Settings: View {
-    @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Socrates.rawValue
+    @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Aristotle.rawValue
     enum Person: String, CaseIterable, Identifiable {
-        case Roosevelt, Socrates, strawberry
+        case ERoosevelt, Aristotle, Epictetus
         var id: String { self.rawValue }
     }
 
@@ -42,7 +42,7 @@ struct Settings: View {
 
     private var selectedPerson: Binding<Person> {
         Binding(
-            get: { Person(rawValue: selectedPersonRaw) ?? .Socrates },
+            get: { Person(rawValue: selectedPersonRaw) ?? .Aristotle },
             set: { selectedPersonRaw = $0.rawValue }
         )
     }

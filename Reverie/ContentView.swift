@@ -17,6 +17,7 @@ struct ContentView: View {
                 PastWords()
                 }
             Tab("Yours", systemImage: "gear") {
+                    DailyQuote()
                 }
             Tab("Settings", systemImage: "gear") {
                 Settings()

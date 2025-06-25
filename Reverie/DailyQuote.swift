@@ -35,14 +35,17 @@ class QuoteView: ObservableObject {
 }
 
 
-class QuoteFilter{
-    
+class QuoteRandomize{
+
+        
 }
 
 struct DailyQuote: View {
     private var quoteViewer = QuoteView()
-    @State private var selectedQuote: Quote? = nil
+    @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Aristotle.rawValue
 
+    @State private var selectedQuote: Quote? = nil
+    var selectedAuthor: [Quote]? = nil
     
     var body: some View {
         NavigationView {
@@ -66,7 +69,22 @@ struct DailyQuote: View {
         .navigationTitle("The Daily Word")
         .onAppear {
             let aristotleQuotes = quoteViewer.quotes.filter { $0.author == "Aristotle" }
-            selectedQuote = aristotleQuotes.randomElement()
+            let ERooseveltQuotes = quoteViewer.quotes.filter { $0.author == "Eleanor Roosevelt" }
+            let EpictetusQuotes = quoteViewer.quotes.filter { $0.author == "Epictetus" }
+            func randomizeQuote() -> [Quote] {
+                if selectedPersonRaw == "Aristotle" {
+                    return(aristotleQuotes)
+                }
+                if selectedPersonRaw == "ERoosevelt" {
+                    return(ERooseveltQuotes)
+                }
+                else{
+                    return(EpictetusQuotes)
+                }
+            }
+            
+            selectedQuote = randomizeQuote().randomElement()
+
 
         }
         

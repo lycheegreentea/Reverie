@@ -14,13 +14,14 @@ enum Appearance: String, CaseIterable, Identifiable {
     
     var id: String { self.rawValue }
 }
+enum Person: String, CaseIterable, Identifiable {
+    case ERoosevelt, Aristotle, Epictetus
+    var id: String { self.rawValue }
+}
 
 struct Settings: View {
     @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Aristotle.rawValue
-    enum Person: String, CaseIterable, Identifiable {
-        case ERoosevelt, Aristotle, Epictetus
-        var id: String { self.rawValue }
-    }
+
 
     @AppStorage("appearance") public var selectedAppearance: Appearance = .system
 

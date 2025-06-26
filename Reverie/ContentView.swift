@@ -20,7 +20,7 @@ struct ContentView: View {
                 DailyQuote()
                 }
             Tab("Your Quotes", systemImage: "quote.bubble.rtl") {
-                DailyQuote()
+                UserQuote()
                 }
             Tab("Settings", systemImage: "gear") {
                 Settings()

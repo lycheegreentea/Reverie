@@ -4,7 +4,7 @@
 //
 //  Created by Lauren Chen on 6/26/25.
 //
-
+/*
 import Foundation
  
  class QuoteData: ObservableObject {
@@ -32,4 +32,4 @@ import Foundation
  
  }
 
-
+ */

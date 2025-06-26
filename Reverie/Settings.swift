@@ -49,13 +49,10 @@ struct Settings: View {
     }
     var body: some View {
         
-        Spacer()
         
-        VStack {
             Text("Settings")
                 .font(.title)
-        }
-        
+      Spacer()
         VStack {
             Text("Quote Person")
                 .font(.title)
@@ -71,8 +68,7 @@ struct Settings: View {
         
         
         VStack {
-            Spacer()
-            Text("Settings")
+            Text("Appearance")
                 .font(.title)
             Picker("Appearance", selection: $selectedAppearance) {
                 ForEach(Appearance.allCases) { mode in

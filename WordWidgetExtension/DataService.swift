@@ -10,11 +10,9 @@ import SwiftUI
 struct DataService {
     var words: [Word] = loadWords()
 
-    private var widgetWord = 0
     var todaysWord: [Word] {
             let today = Calendar.current.startOfDay(for: Date())
             return words.filter { Calendar.current.isDate($0.date, inSameDayAs: today) }
         }
-    
 }
 

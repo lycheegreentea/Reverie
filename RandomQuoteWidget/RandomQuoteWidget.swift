@@ -2,7 +2,7 @@
 //  RandomQuoteWidget.swift
 //  RandomQuoteWidget
 //
-//  Created by Lauren Chen on 6/25/25.
+//  Created by Lauren Chen on 6/26/25.
 //
 
 import WidgetKit

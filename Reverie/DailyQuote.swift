@@ -34,12 +34,6 @@ class QuoteView: ObservableObject {
     @Published var quotes: [Quote] = QuoteLoader.loadQuotes()
 }
 
-
-class QuoteRandomize{
-
-        
-}
-
 struct DailyQuote: View {
     private var quoteViewer = QuoteView()
     @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Aristotle.rawValue
@@ -49,7 +43,6 @@ struct DailyQuote: View {
     
     var body: some View {
         NavigationView {
-            
                 if let quote = selectedQuote {
                     VStack(alignment: .leading) {
                         VStack{
@@ -57,14 +50,9 @@ struct DailyQuote: View {
                                 .font(.headline)
                             Text(quote.author)
                                 .font(.subheadline)
-                            
-                        
-                        
                     }
                 }
-                    
             }
-            
             }
         .navigationTitle("The Daily Word")
         .onAppear {
@@ -77,8 +65,7 @@ struct DailyQuote: View {
                 }
                 if selectedPersonRaw == "ERoosevelt" {
                     return(ERooseveltQuotes)
-                }
-                else{
+                } else {
                     return(EpictetusQuotes)
                 }
             }
@@ -87,8 +74,7 @@ struct DailyQuote: View {
 
 
         }
-        
-    }
+            }
 }
 
 #Preview {

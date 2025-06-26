@@ -16,8 +16,11 @@ struct ContentView: View {
             Tab("Archive", systemImage: "append.page") {
                 PastWords()
                 }
-            Tab("Yours", systemImage: "gear") {
-                    DailyQuote()
+            Tab("Quote", systemImage: "quote.opening") {
+                DailyQuote()
+                }
+            Tab("Your Quotes", systemImage: "quote.bubble.rtl") {
+                DailyQuote()
                 }
             Tab("Settings", systemImage: "gear") {
                 Settings()

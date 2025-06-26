@@ -28,6 +28,8 @@ struct ContentView: View {
         }
         .environmentObject(FavoriteManager())
         .environmentObject(WordStore())
+        .environmentObject(QuoteManager())
+
     }
 }
 

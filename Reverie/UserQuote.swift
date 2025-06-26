@@ -38,6 +38,16 @@ class QuoteManager: ObservableObject {
             savedQuotes = decoded
         }
     }
+    func updateQuote(_ updated: UserQuoteModel) {
+        if let index = savedQuotes.firstIndex(where: { $0.id == updated.id }) {
+            savedQuotes[index] = updated
+            saveQuotes()
+        }
+    }
+    func deleteQuotes(at offsets: IndexSet) {
+        savedQuotes.remove(atOffsets: offsets)
+        saveQuotes()
+    }
 }
 
 struct DetailView: View {
@@ -46,7 +56,9 @@ struct DetailView: View {
     @State private var date: Date = Date()
     @State private var id: UUID = UUID()
 
+    var existingQuote: UserQuoteModel? = nil
 
+    
     @EnvironmentObject var manager: QuoteManager
     @Environment(\.dismiss) var dismiss
 
@@ -64,14 +76,27 @@ struct DetailView: View {
             DatePicker(selection: $date, displayedComponents: .date,  label: { Text("Date") }, )
                 .datePickerStyle(.automatic)
             Button("Save") {
-                let newQuote = UserQuoteModel(quote: quote, author: author, date: date, id:id)
-                manager.addQuote(newQuote)
+                let updatedQuote = UserQuoteModel(quote: quote, author: author, date: date, id: id)
+
+                if existingQuote == nil {
+                    manager.addQuote(updatedQuote)
+                                } else {
+                                    manager.updateQuote(updatedQuote)
+                                }
                 dismiss()
             }
                 
 
         }
-        .navigationBarTitle("Add a quote")
+        .navigationTitle(existingQuote == nil ? "Add a quote" : "Edit quote")
+                .onAppear {
+                    if let existing = existingQuote {
+                        quote = existing.quote
+                        author = existing.author
+                        date = existing.date
+                        id = existing.id
+                    }
+                }
         
         Spacer()
         
@@ -80,31 +105,51 @@ struct DetailView: View {
 
 struct UserQuote: View {
     @EnvironmentObject var manager: QuoteManager
-
+    @State private var searchTerm = ""
+    var searchQuotes: [UserQuoteModel] {
+        guard !searchTerm.isEmpty else {
+            return manager.savedQuotes
+        }
+        return manager.savedQuotes.filter { quote in  quote.quote.localizedCaseInsensitiveContains(searchTerm) ||
+            quote.author.localizedCaseInsensitiveContains(searchTerm)
+        }
+    }
+    
     var body: some View {
         
         NavigationView {
             VStack{
-                NavigationLink(destination: DetailView()) { Image(systemName: "plus") }
-                    .environmentObject(manager)
+                NavigationLink(destination: DetailView().environmentObject(manager)) {
+                    Label("Add a quote", systemImage: "plus")
+                }
+                
                 
                 List {
-                    ForEach(manager.savedQuotes) { quote in
-                        VStack(alignment: .leading) {
-                            Text(quote.quote).font(.headline)
-                            Text("- \(quote.author)").font(.subheadline)
-                            Text(quote.date, style: .date)
+                    
+                    ForEach(searchQuotes) { quote in
+                        NavigationLink(
+                            destination: DetailView(existingQuote: quote).environmentObject(manager)
+                        ) {
+                            
+                            VStack(alignment: .leading) {
+                                Text(quote.quote).font(.headline)
+                                Text("- \(quote.author)").font(.subheadline)
+                            }
                         }
+                    }
+                    .onDelete { indexSet in
+                        manager.deleteQuotes(at: indexSet)
                     }
                 }
                 
-                .navigationBarTitle("User Quotes")
-                
+                        
+                .navigationBarTitle("Your Quotes")
+                .searchable(text: $searchTerm, prompt: "Search for a word")
             }
-        }
-        
+            
         }
     }
+}
 
 
 #Preview {

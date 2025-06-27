@@ -27,8 +27,7 @@ struct WordView: View {
                     
                     Text(word.partOfSpeech)
                         .font(.subheadline)
-                    Text(word.pronunciation)
-                        .font(.subheadline)
+                    
                     Text(word.definition)
                         .font(.body)
                     Text(word.example)

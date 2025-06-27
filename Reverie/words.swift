@@ -14,7 +14,6 @@ struct Word: Codable, Identifiable {
     let date: Date
     let word: String
     let partOfSpeech: String
-    let pronunciation: String
     let definition: String
     let example: String
 

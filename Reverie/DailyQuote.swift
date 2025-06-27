@@ -39,11 +39,15 @@ struct DailyQuote: View {
     @AppStorage("chosenPerson") private var selectedPersonRaw: String = Person.Aristotle.rawValue
 
     @State private var selectedQuote: Quote? = nil
+    @State var oldest: Bool = false
+    @State var newest: Bool = false
+    @State var alphabetical: Bool = false
     var selectedAuthor: [Quote]? = nil
     
     var body: some View {
         NavigationView {
-                if let quote = selectedQuote {
+                
+            if let quote = selectedQuote {
                     VStack(alignment: .leading) {
                         VStack{
                             Text(quote.quote)

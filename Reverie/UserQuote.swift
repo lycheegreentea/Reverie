@@ -20,7 +20,7 @@ class QuoteManager: ObservableObject {
     }
 
     private let saveKey = "userQuotes"
-
+    
     init() {
         loadQuotes()
     }
@@ -59,7 +59,7 @@ struct DetailView: View {
     @State private var author: String = ""
     @State private var date: Date = Date()
     @State private var id: UUID = UUID()
-
+    
     var existingQuote: UserQuoteModel? = nil
 
     
@@ -110,6 +110,9 @@ struct DetailView: View {
 struct UserQuote: View {
     @EnvironmentObject var manager: QuoteManager
     @State private var searchTerm = ""
+    @State var oldest: Bool = false
+    @State var newest: Bool = false
+    @State var alphabetical: Bool = false
     var searchQuotes: [UserQuoteModel] {
         guard !searchTerm.isEmpty else {
             return manager.savedQuotes
@@ -118,19 +121,59 @@ struct UserQuote: View {
             quote.author.localizedCaseInsensitiveContains(searchTerm)
         }
     }
+    var currentWords: [UserQuoteModel] {
+        if(oldest == true){
+            return searchQuotes.sorted { $0.date < $1.date }
+        }
+        else if(newest == true){
+            return searchQuotes.sorted { $0.date > $1.date }
+        }
+        else if(alphabetical==true){
+            return searchQuotes.sorted { $1.quote > $0.quote }
+        }
+        else{
+            return searchQuotes
+        }
+    }
     
     var body: some View {
         
         NavigationView {
             VStack{
-                NavigationLink(destination: DetailView().environmentObject(manager)) {
-                    Label("Add a quote", systemImage: "plus")
+                HStack{
+                    Menu("Sort by") {
+                        Button{
+                                oldest = true
+                                newest = false
+                                alphabetical = false
+                        } label: {
+                            Label("oldest", systemImage: "plus")
+                            
+                        }
+                        Button{
+                                newest = true
+                                oldest = false
+                                alphabetical = false
+                        } label: {
+                            Label("newest", systemImage: "plus")
+                        }
+                        Button{
+                                alphabetical = true
+                                newest = false
+                                oldest = false
+                        } label: {
+                            Label("alphabetical", systemImage: "plus")
+                        }
+                    }
+                    NavigationLink(destination: DetailView().environmentObject(manager)) {
+                        Label("Add a quote", systemImage: "plus")
+                    }
                 }
                 
                 
                 List {
                     
-                    ForEach(searchQuotes) { quote in
+                    ForEach(currentWords) { quote in
                         NavigationLink(
                             destination: DetailView(existingQuote: quote).environmentObject(manager)
                         ) {
@@ -138,6 +181,8 @@ struct UserQuote: View {
                             VStack(alignment: .leading) {
                                 Text(quote.quote).font(.headline)
                                 Text("- \(quote.author)").font(.subheadline)
+                                Text(quote.date.formatted(date: .abbreviated, time: .omitted))
+
                             }
                         }
                     }

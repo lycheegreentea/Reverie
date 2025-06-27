@@ -12,6 +12,10 @@ struct PastWords: View {
     @EnvironmentObject var wordStore: WordStore
     @State private var searchTerm = ""
     @State private var favoritesToggled = true
+    @State var oldest: Bool = false
+    @State var newest: Bool = false
+    @State var alphabetical: Bool = false
+
     var onlyFavorites: [Word] {
         if(favoritesToggled){
             return(wordStore.words.filter(favoriteManager.isFavorite))
@@ -26,15 +30,55 @@ struct PastWords: View {
         }
         return onlyFavorites.filter { $0.word.localizedCaseInsensitiveContains(searchTerm)}
     }
+    var currentWords: [Word] {
+        if(oldest == true){
+            return searchWords.sorted { $0.date < $1.date }
+        }
+        else if(newest == true){
+            return searchWords.sorted { $0.date > $1.date }
+        }
+        else if(alphabetical==true){
+            return searchWords.sorted { $1.word > $0.word }
+        }
+        else{
+            return searchWords
+        }
+    }
     
     var body: some View {
         NavigationStack {
             VStack{
+                HStack{
+                    Menu("Sort by") {
+                        Button{
+                                oldest = true
+                                newest = false
+                                alphabetical = false
+                        } label: {
+                            Label("oldest", systemImage: "plus")
+                            
+                        }
+                        Button{
+                                newest = true
+                                oldest = false
+                                alphabetical = false
+                        } label: {
+                            Label("newest", systemImage: "plus")
+                        }
+                        Button{
+                                alphabetical = true
+                                newest = false
+                                oldest = false
+                        } label: {
+                            Label("alphabetical", systemImage: "plus")
+                        }
+                    }
                     Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
                         .tint(Color.green)
                         .toggleStyle(.button)
                         .contentTransition(.opacity)
-                    List(searchWords) { word in
+                }
+                    List(currentWords) { word in
                         VStack(alignment: .leading) {
                             HStack{
                                 Text(word.word)
@@ -52,8 +96,7 @@ struct PastWords: View {
                             
                             Text(word.partOfSpeech)
                                 .font(.subheadline)
-                            Text(word.pronunciation)
-                                .font(.subheadline)
+                            
                             Text(word.definition)
                                 .font(.body)
                             Text(word.example)

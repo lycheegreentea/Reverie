@@ -7,22 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94544E382E0D7A08006C403F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947383FA2DF282B300909B03 /* WidgetKit.framework */; };
-		94544E392E0D7A08006C403F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947383FC2DF282B300909B03 /* SwiftUI.framework */; };
-		94544E442E0D7A09006C403F /* RandomQuoteWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 94544E372E0D7A08006C403F /* RandomQuoteWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		947383FB2DF282B300909B03 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947383FA2DF282B300909B03 /* WidgetKit.framework */; };
 		947383FD2DF282B300909B03 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947383FC2DF282B300909B03 /* SwiftUI.framework */; };
 		9473840A2DF282B400909B03 /* WordWidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		94544E422E0D7A09006C403F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94A0EA6B2DE00A74001EE567 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 94544E362E0D7A08006C403F;
-			remoteInfo = RandomQuoteWidgetExtension;
-		};
 		947384082DF282B400909B03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94A0EA6B2DE00A74001EE567 /* Project object */;
@@ -53,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				94544E442E0D7A09006C403F /* RandomQuoteWidgetExtension.appex in Embed Foundation Extensions */,
 				9473840A2DF282B400909B03 /* WordWidgetExtensionExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -63,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		94544D8C2DF8F1A2006C403F /* WordWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WordWidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
-		94544E372E0D7A08006C403F /* RandomQuoteWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomQuoteWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		94544E592E0DEF3C006C403F /* RandomQuoteWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomQuoteWidgetExtension.entitlements; sourceTree = "<group>"; };
 		947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WordWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		947383FA2DF282B300909B03 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -89,27 +77,6 @@
 			);
 			target = 947383F72DF282B300909B03 /* WordWidgetExtensionExtension */;
 		};
-		94544E482E0D7A09006C403F /* Exceptions for "RandomQuoteWidget" folder in "RandomQuoteWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 94544E362E0D7A08006C403F /* RandomQuoteWidgetExtension */;
-		};
-		94544E542E0D7B8C006C403F /* Exceptions for "RandomQuoteWidget" folder in "Reverie" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				QuoteDataService.swift,
-			);
-			target = 94A0EA722DE00A74001EE567 /* Reverie */;
-		};
-		94544E582E0D8083006C403F /* Exceptions for "Reverie" folder in "RandomQuoteWidgetExtension" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				UserQuote.swift,
-			);
-			target = 94544E362E0D7A08006C403F /* RandomQuoteWidgetExtension */;
-		};
 		9473840B2DF282B400909B03 /* Exceptions for "WordWidgetExtension" folder in "WordWidgetExtensionExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -120,15 +87,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		94544E3A2E0D7A08006C403F /* RandomQuoteWidget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				94544E542E0D7B8C006C403F /* Exceptions for "RandomQuoteWidget" folder in "Reverie" target */,
-				94544E482E0D7A09006C403F /* Exceptions for "RandomQuoteWidget" folder in "RandomQuoteWidgetExtension" target */,
-			);
-			path = RandomQuoteWidget;
-			sourceTree = "<group>";
-		};
 		947383FE2DF282B300909B03 /* WordWidgetExtension */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -142,7 +100,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				94544D9C2DFA5B8C006C403F /* Exceptions for "Reverie" folder in "WordWidgetExtensionExtension" target */,
-				94544E582E0D8083006C403F /* Exceptions for "Reverie" folder in "RandomQuoteWidgetExtension" target */,
 			);
 			path = Reverie;
 			sourceTree = "<group>";
@@ -160,15 +117,6 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		94544E342E0D7A08006C403F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				94544E392E0D7A08006C403F /* SwiftUI.framework in Frameworks */,
-				94544E382E0D7A08006C403F /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		947383F52DF282B300909B03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,7 +168,6 @@
 				94A0EA832DE00A76001EE567 /* ReverieTests */,
 				94A0EA8D2DE00A76001EE567 /* ReverieUITests */,
 				947383FE2DF282B300909B03 /* WordWidgetExtension */,
-				94544E3A2E0D7A08006C403F /* RandomQuoteWidget */,
 				947383F92DF282B300909B03 /* Frameworks */,
 				94A0EA742DE00A74001EE567 /* Products */,
 			);
@@ -233,7 +180,6 @@
 				94A0EA802DE00A76001EE567 /* ReverieTests.xctest */,
 				94A0EA8A2DE00A76001EE567 /* ReverieUITests.xctest */,
 				947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */,
-				94544E372E0D7A08006C403F /* RandomQuoteWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,28 +187,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94544E362E0D7A08006C403F /* RandomQuoteWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 94544E452E0D7A09006C403F /* Build configuration list for PBXNativeTarget "RandomQuoteWidgetExtension" */;
-			buildPhases = (
-				94544E332E0D7A08006C403F /* Sources */,
-				94544E342E0D7A08006C403F /* Frameworks */,
-				94544E352E0D7A08006C403F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				94544E3A2E0D7A08006C403F /* RandomQuoteWidget */,
-			);
-			name = RandomQuoteWidgetExtension;
-			packageProductDependencies = (
-			);
-			productName = RandomQuoteWidgetExtension;
-			productReference = 94544E372E0D7A08006C403F /* RandomQuoteWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		947383F72DF282B300909B03 /* WordWidgetExtensionExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9473840C2DF282B400909B03 /* Build configuration list for PBXNativeTarget "WordWidgetExtensionExtension" */;
@@ -298,7 +222,6 @@
 			);
 			dependencies = (
 				947384092DF282B400909B03 /* PBXTargetDependency */,
-				94544E432E0D7A09006C403F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				94A0EA752DE00A74001EE567 /* Reverie */,
@@ -366,9 +289,6 @@
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					94544E362E0D7A08006C403F = {
-						CreatedOnToolsVersion = 16.4;
-					};
 					947383F72DF282B300909B03 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -403,19 +323,11 @@
 				94A0EA7F2DE00A76001EE567 /* ReverieTests */,
 				94A0EA892DE00A76001EE567 /* ReverieUITests */,
 				947383F72DF282B300909B03 /* WordWidgetExtensionExtension */,
-				94544E362E0D7A08006C403F /* RandomQuoteWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		94544E352E0D7A08006C403F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		947383F62DF282B300909B03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,13 +359,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		94544E332E0D7A08006C403F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		947383F42DF282B300909B03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,11 +390,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		94544E432E0D7A09006C403F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 94544E362E0D7A08006C403F /* RandomQuoteWidgetExtension */;
-			targetProxy = 94544E422E0D7A09006C403F /* PBXContainerItemProxy */;
-		};
 		947384092DF282B400909B03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 947383F72DF282B300909B03 /* WordWidgetExtensionExtension */;
@@ -508,64 +408,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		94544E462E0D7A09006C403F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = RandomQuoteWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5464NFJ76M;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RandomQuoteWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RandomQuoteWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = name.lauren.Reverie.RandomQuoteWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		94544E472E0D7A09006C403F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = RandomQuoteWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5464NFJ76M;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RandomQuoteWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = RandomQuoteWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = name.lauren.Reverie.RandomQuoteWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		9473840D2DF282B400909B03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -872,15 +714,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		94544E452E0D7A09006C403F /* Build configuration list for PBXNativeTarget "RandomQuoteWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94544E462E0D7A09006C403F /* Debug */,
-				94544E472E0D7A09006C403F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9473840C2DF282B400909B03 /* Build configuration list for PBXNativeTarget "WordWidgetExtensionExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

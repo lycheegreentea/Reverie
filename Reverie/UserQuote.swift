@@ -14,6 +14,10 @@ struct UserQuoteModel: Codable, Identifiable {
 }
 class QuoteManager: ObservableObject {
     @Published var savedQuotes: [UserQuoteModel] = []
+    private let suiteName = "group.com.lauren.reverie"
+    private var userDefaults: UserDefaults? {
+        UserDefaults(suiteName: suiteName)
+    }
 
     private let saveKey = "userQuotes"
 
@@ -28,12 +32,12 @@ class QuoteManager: ObservableObject {
 
     private func saveQuotes() {
         if let data = try? JSONEncoder().encode(savedQuotes) {
-            UserDefaults.standard.set(data, forKey: saveKey)
+            userDefaults?.set(data, forKey: saveKey)
         }
     }
 
     private func loadQuotes() {
-        if let data = UserDefaults.standard.data(forKey: saveKey),
+        if let data = userDefaults?.data(forKey: saveKey),
            let decoded = try? JSONDecoder().decode([UserQuoteModel].self, from: data) {
             savedQuotes = decoded
         }

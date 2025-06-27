@@ -10,7 +10,9 @@ import SwiftUI
 
 @main
 struct WordWidgetExtensionBundle: WidgetBundle {
-    var body: some Widget {
+    @WidgetBundleBuilder var body: some Widget {
+        RandomQuoteWidget()
         WordWidgetExtension()
+        UserQuoteWidget()
     }
 }

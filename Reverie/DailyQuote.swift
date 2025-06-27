@@ -64,6 +64,7 @@ struct DailyQuote: View {
                     return(aristotleQuotes)
                 }
                 if selectedPersonRaw == "ERoosevelt" {
+
                     return(ERooseveltQuotes)
                 } else {
                     return(EpictetusQuotes)
@@ -71,12 +72,11 @@ struct DailyQuote: View {
             }
             
             selectedQuote = randomizeQuote().randomElement()
+            let sharedDefaults = UserDefaults(suiteName: "group.com.lauren.reverie")
+            sharedDefaults?.set(selectedQuote?.quote, forKey: "quoteText")
+            sharedDefaults?.set(selectedQuote?.author, forKey: "quoteAuthor")
             
-            if let quote = selectedQuote {
-                let sharedDefaults = UserDefaults(suiteName: "group.com.lauren.reverie")
-                sharedDefaults?.set(quote.quote, forKey: "quoteText")
-                sharedDefaults?.set(quote.author, forKey: "quoteAuthor")
-            }
+            
 
 
         }

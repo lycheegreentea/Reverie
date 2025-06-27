@@ -64,6 +64,7 @@
 /* Begin PBXFileReference section */
 		94544D8C2DF8F1A2006C403F /* WordWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WordWidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
 		94544E372E0D7A08006C403F /* RandomQuoteWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomQuoteWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		94544E592E0DEF3C006C403F /* RandomQuoteWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RandomQuoteWidgetExtension.entitlements; sourceTree = "<group>"; };
 		947383F82DF282B300909B03 /* WordWidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WordWidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		947383FA2DF282B300909B03 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		947383FC2DF282B300909B03 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -213,6 +214,7 @@
 		94A0EA6A2DE00A74001EE567 = {
 			isa = PBXGroup;
 			children = (
+				94544E592E0DEF3C006C403F /* RandomQuoteWidgetExtension.entitlements */,
 				94544D8C2DF8F1A2006C403F /* WordWidgetExtensionExtension.entitlements */,
 				94A0EA752DE00A74001EE567 /* Reverie */,
 				94A0EA832DE00A76001EE567 /* ReverieTests */,
@@ -511,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RandomQuoteWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5464NFJ76M;
@@ -539,6 +542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RandomQuoteWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5464NFJ76M;

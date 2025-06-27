@@ -71,6 +71,12 @@ struct DailyQuote: View {
             }
             
             selectedQuote = randomizeQuote().randomElement()
+            
+            if let quote = selectedQuote {
+                let sharedDefaults = UserDefaults(suiteName: "group.com.lauren.reverie")
+                sharedDefaults?.set(quote.quote, forKey: "quoteText")
+                sharedDefaults?.set(quote.author, forKey: "quoteAuthor")
+            }
 
 
         }

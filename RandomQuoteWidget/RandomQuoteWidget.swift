@@ -8,77 +8,63 @@
 import WidgetKit
 import SwiftUI
 
+struct QuoteEntry: TimelineEntry {
+    let date: Date
+    let quoteText: String
+    let quoteAuthor: String
+}
+
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    func placeholder(in context: Context) -> QuoteEntry {
+        QuoteEntry(date: Date(), quoteText: "Loading...", quoteAuthor: "")
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+    func getSnapshot(in context: Context, completion: @escaping (QuoteEntry) -> ()) {
+        let entry = loadQuoteEntry()
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+    func getTimeline(in context: Context, completion: @escaping (Timeline<QuoteEntry>) -> ()) {
+        let entry = loadQuoteEntry()
+        // Refresh daily
+        let nextUpdate = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+        let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
         completion(timeline)
     }
 
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
+    private func loadQuoteEntry() -> QuoteEntry {
+        let sharedDefaults = UserDefaults(suiteName: "group.com.yourcompany.reverie")
+        let quote = sharedDefaults?.string(forKey: "quoteText") ?? "No quote available"
+        let author = sharedDefaults?.string(forKey: "quoteAuthor") ?? ""
+        return QuoteEntry(date: Date(), quoteText: quote, quoteAuthor: author)
+    }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
-}
 
 struct RandomQuoteWidgetEntryView : View {
     var entry: Provider.Entry
-
+    
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+        VStack(alignment: .leading) {
+            Text(entry.quoteText)
+                .font(.headline)
+                .padding(.bottom, 2)
+            Text("- " + entry.quoteAuthor)
+                .font(.caption)
+                .foregroundColor(.secondary)
         }
+        .padding()
+        .containerBackground(.fill.tertiary, for: .widget)
     }
 }
 
-struct RandomQuoteWidget: Widget {
-    let kind: String = "RandomQuoteWidget"
 
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                RandomQuoteWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                RandomQuoteWidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
-        }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-    }
-}
+    
 
-#Preview(as: .systemSmall) {
+
+#Preview(as: .systemMedium) {
     RandomQuoteWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+    QuoteEntry(date: Date(), quoteText: "Be yourself; everyone else is already taken.", quoteAuthor: "Oscar Wilde")
+    QuoteEntry(date: Date().addingTimeInterval(3600), quoteText: "The only thing we have to fear is fear itself.", quoteAuthor: "Franklin D. Roosevelt")
 }

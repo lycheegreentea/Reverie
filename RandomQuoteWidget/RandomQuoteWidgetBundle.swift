@@ -9,8 +9,16 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct RandomQuoteWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        RandomQuoteWidget()
+struct RandomQuoteWidget: Widget {
+    let kind: String = "RandomQuoteWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            RandomQuoteWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("Daily Quote")
+        .description("Shows your daily selected quote.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
+

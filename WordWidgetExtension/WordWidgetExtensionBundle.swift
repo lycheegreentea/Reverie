@@ -12,6 +12,5 @@ import SwiftUI
 struct WordWidgetExtensionBundle: WidgetBundle {
     var body: some Widget {
         WordWidgetExtension()
-        WordWidgetExtensionControl()
     }
 }

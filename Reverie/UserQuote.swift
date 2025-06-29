@@ -14,7 +14,7 @@ struct UserQuoteModel: Codable, Identifiable {
 }
 class QuoteManager: ObservableObject {
     @Published var savedQuotes: [UserQuoteModel] = []
-    private let suiteName = "group.com.lauren.reverie"
+    private let suiteName = "group.net.lauren.quotecabulary"
     private var userDefaults: UserDefaults? {
         UserDefaults(suiteName: suiteName)
     }

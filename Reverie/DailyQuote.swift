@@ -76,7 +76,7 @@ struct DailyQuote: View {
             }
             
             selectedQuote = randomizeQuote().randomElement()
-            let sharedDefaults = UserDefaults(suiteName: "group.com.lauren.reverie")
+            let sharedDefaults = UserDefaults(suiteName: "group.net.lauren.quotecabulary")
             sharedDefaults?.set(selectedQuote?.quote, forKey: "quoteText")
             sharedDefaults?.set(selectedQuote?.author, forKey: "quoteAuthor")
             

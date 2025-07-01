@@ -16,15 +16,16 @@ struct ContentView: View {
             Tab("Archive", systemImage: "append.page") {
                 PastWords()
                 }
+            Tab("Your Words", systemImage: "append.page") {
+                PastWords()
+                }
             Tab("Quote", systemImage: "quote.opening") {
                 DailyQuote()
                 }
             Tab("Your Quotes", systemImage: "quote.bubble.rtl") {
                 UserQuote()
                 }
-            Tab("Settings", systemImage: "gear") {
-                Settings()
-                }
+            
         }
         .environmentObject(FavoriteManager())
         .environmentObject(WordStore())

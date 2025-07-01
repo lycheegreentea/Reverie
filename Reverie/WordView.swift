@@ -16,33 +16,59 @@ struct WordView: View {
 
     var body: some View {
         NavigationView {
-            List(wordStore.todaysWord) { word in
-                VStack(alignment: .leading) {
-                    HStack{
-                        Text(word.word)
-                            .font(.headline)
-            
+                VStack {
+                    Text(wordStore.todaysWord[0].word)
+                        .font(.largeTitle)
+                        .fontWeight(.medium)
+                    
+                    Text(wordStore.todaysWord[0].partOfSpeech)
+                        .font(.caption)
+                    
+                    Divider()
+                        .frame(height: 1.5)
+                        .background(Color.primary)
+                    
+                    
+                    Text(wordStore.todaysWord[0].definition)
+                        .font(.body)
+                    
+                    Text(wordStore.todaysWord[0].example)
+                        .font(.caption)
+                        .italic()
+                    
+                    Text(wordStore.todaysWord[0].date.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption2)
+                }
+                .fontDesign(.serif)
+                .padding(.horizontal)
+                
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("Today's word")
+                            .font(.largeTitle)
+                            .fontDesign(.serif)
+                            .fontWeight(.bold)
+                            .padding(.top, 90)
                     }
                     
                     
-                    Text(word.partOfSpeech)
-                        .font(.subheadline)
-                    
-                    Text(word.definition)
-                        .font(.body)
-                    Text(word.example)
-                        .font(.caption)
-                        .italic()
-                    Text(word.date.formatted(date: .abbreviated, time: .omitted))
-                        .font(.caption2)
-                        .foregroundColor(.gray)
-                }
-                }
-                .navigationTitle("The Daily Word")
+                
+                    ToolbarItem(placement: .topBarTrailing){
+                        NavigationLink(destination: Settings()) {
+                                    Image(systemName: "gearshape")
+                                        .imageScale(.large)
+                                }
+                        .padding(.top, 90)
+                        .foregroundColor(.primary)
 
+                    }
             }
 
+                
+            }
         }
+
+        
 
     }
 

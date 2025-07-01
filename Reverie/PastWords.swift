@@ -46,8 +46,10 @@ struct PastWords: View {
     }
     
     var body: some View {
+        
         NavigationStack {
             VStack{
+                
                 HStack{
                     Menu("Sort by") {
                         Button{
@@ -56,6 +58,8 @@ struct PastWords: View {
                                 alphabetical = false
                         } label: {
                             Label("oldest", systemImage: "plus")
+                                .fontDesign(.serif)
+
                             
                         }
                         Button{
@@ -64,6 +68,8 @@ struct PastWords: View {
                                 alphabetical = false
                         } label: {
                             Label("newest", systemImage: "plus")
+                                .fontDesign(.serif)
+
                         }
                         Button{
                                 alphabetical = true
@@ -71,12 +77,22 @@ struct PastWords: View {
                                 oldest = false
                         } label: {
                             Label("alphabetical", systemImage: "plus")
+                                .fontDesign(.serif)
+
                         }
                     }
+                    .tint(Color.primary)
+                    .contentTransition(.opacity)
+                    .fontDesign(.serif)
+                    .buttonStyle(.borderedProminent)
+
                     Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
-                        .tint(Color.green)
+                        .tint(Color.primary)
                         .toggleStyle(.button)
                         .contentTransition(.opacity)
+                        .fontDesign(.serif)
+                        .buttonStyle(.borderedProminent)
+
                 }
                     List(currentWords) { word in
                         VStack(alignment: .leading) {
@@ -89,7 +105,7 @@ struct PastWords: View {
                                     favoriteManager.toggleFavorite(for: word)
                                 }) {
                                     Image(systemName: favoriteManager.isFavorite(word) ? "star.fill" : "star")
-                                        .foregroundColor(.yellow)
+                                        .foregroundColor(.primary)
                                 }
                                 .buttonStyle(BorderlessButtonStyle())
                             }
@@ -108,18 +124,40 @@ struct PastWords: View {
                         }
                         
                         .padding(4)
+                        .fontDesign(.serif)
+
                     }
-                    .navigationTitle("Past Words")
                     .searchable(text: $searchTerm, prompt: "Search for a word")
                     .scrollContentBackground(.hidden)
+                    .navigationTitle("The Archive")
+                    .background(Color(.systemGray6))
+
                     
                 }
-                .background(Color(.systemGray6))
+                .toolbar {
+                    
+                    
+                    
+                
+                    ToolbarItem(placement: .topBarTrailing){
+                        NavigationLink(destination: Settings()) {
+                                    Image(systemName: "gearshape")
+                                        .imageScale(.large)
+                                }
+                        .padding(.top, 90)
+                        .foregroundColor(.primary)
+
+                    }
             }
+            }
+        
+        
             
         
 
     }
+    
+    
 
 }
 

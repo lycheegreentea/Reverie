@@ -15,7 +15,7 @@ struct WordView: View {
     @EnvironmentObject var wordStore: WordStore
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
                 VStack {
                     Text(wordStore.todaysWord[0].word)
                         .font(.largeTitle)
@@ -41,15 +41,9 @@ struct WordView: View {
                 }
                 .fontDesign(.serif)
                 .padding(.horizontal)
-                
+                .navigationTitle("Today's word")
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Text("Today's word")
-                            .font(.largeTitle)
-                            .fontDesign(.serif)
-                            .fontWeight(.bold)
-                            .padding(.top, 90)
-                    }
+                    
                     
                     
                 
@@ -58,7 +52,6 @@ struct WordView: View {
                                     Image(systemName: "gearshape")
                                         .imageScale(.large)
                                 }
-                        .padding(.top, 90)
                         .foregroundColor(.primary)
 
                     }

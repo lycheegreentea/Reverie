@@ -17,7 +17,7 @@ struct ContentView: View {
                 PastWords()
                 }
             Tab("Your Words", systemImage: "append.page") {
-                PastWords()
+                UserWords()
                 }
             Tab("Quote", systemImage: "quote.opening") {
                 DailyQuote()
@@ -27,9 +27,13 @@ struct ContentView: View {
                 }
             
         }
+        .toolbarBackground(.green, for: .tabBar)
         .environmentObject(FavoriteManager())
         .environmentObject(WordStore())
         .environmentObject(QuoteManager())
+        .environmentObject(userWordManager())
+        
+
 
     }
 }

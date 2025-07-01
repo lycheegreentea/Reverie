@@ -6,18 +6,28 @@
 //
 import SwiftUI
 @main
+
 struct ReverieApp: App {
+
+    
     @StateObject private var favoriteManager = FavoriteManager()
     @StateObject private var wordStore = WordStore()
     @AppStorage("appearance") private var selectedAppearance: Appearance = .system
 
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
-                .environmentObject(favoriteManager)
-                .environmentObject(wordStore)
-                .preferredColorScheme(colorScheme(for: selectedAppearance))
-
+            NavigationStack {
+                
+                
+                ContentView()
+                   
+                
+                
+            }
+            .preferredColorScheme(colorScheme(for: selectedAppearance))
+            .environmentObject(favoriteManager)
+            .environmentObject(wordStore)
         }
         
     }

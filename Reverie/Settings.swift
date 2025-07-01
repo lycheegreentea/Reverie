@@ -26,16 +26,7 @@ struct Settings: View {
     @AppStorage("appearance") public var selectedAppearance: Appearance = .system
 
     
-    var colorScheme: ColorScheme? {
-                switch selectedAppearance {
-                case .light:
-                    return .light
-                case .dark:
-                    return .dark
-                case .system:
-                    return nil
-                }
-            }
+
     
     
 
@@ -49,38 +40,48 @@ struct Settings: View {
     }
     var body: some View {
         
-        
-            Text("Settings")
-                .font(.title)
-      Spacer()
-        VStack {
-            Text("Quote Person")
-                .font(.title)
-            Picker("Select a person", selection: selectedPerson) {
-                ForEach(Person.allCases) { person in
-                    Text(person.rawValue).tag(person)
-                }
-            }
+        NavigationStack {
             
-        }
-        .padding()
-        .pickerStyle(.segmented)
-        
-        
-        VStack {
-            Text("Appearance")
-                .font(.title)
-            Picker("Appearance", selection: $selectedAppearance) {
-                ForEach(Appearance.allCases) { mode in
-                    Text(mode.rawValue).tag(mode)
+            
+            
+            Spacer()
+            VStack {
+                Text("Quote Person")
+                    .font(.title)
+                Picker("Select a person", selection: selectedPerson) {
+                    ForEach(Person.allCases) { person in
+                        Text(person.rawValue).tag(person)
+                    }
                 }
+                
             }
-            .pickerStyle(SegmentedPickerStyle())
             .padding()
+            .pickerStyle(.segmented)
+            .fontDesign(.serif)
+            
+            
+            
+            VStack {
+                Text("Appearance")
+                    .font(.title)
+                Picker("Appearance", selection: $selectedAppearance) {
+                    ForEach(Appearance.allCases) { mode in
+                        Text(mode.rawValue).tag(mode)
+                        
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+            }
+            .fontDesign(.serif)
+            .navigationBarTitle("Settings")
+
+            
+            
+            Spacer()
         }
-        .preferredColorScheme(colorScheme)
         
-        Spacer()
     }
     }
 #Preview {

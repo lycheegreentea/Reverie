@@ -1,143 +1,141 @@
 //
-//  UserQuote.swift
+//  UserWords.swift
 //  Reverie
 //
-//  Created by Lauren Chen on 6/26/25.
+//  Created by Lauren Chen on 7/1/25.
 //
 
 import SwiftUI
-struct UserQuoteModel: Codable, Identifiable {
-    let quote: String
-    let author: String
+struct userWordModel: Codable, Identifiable {
+    let word: String
+    let definition: String
     let date: Date
     let id: UUID
 }
-class QuoteManager: ObservableObject {
-    @Published var savedQuotes: [UserQuoteModel] = []
+class userWordManager: ObservableObject {
+    @Published var savedUserWords: [userWordModel] = []
     private let suiteName = "group.net.lauren.quotecabulary"
     private var userDefaults: UserDefaults? {
         UserDefaults(suiteName: suiteName)
     }
 
-    private let saveKey = "userQuotes"
+    private let saveKey = "userWords"
     
     init() {
-        loadQuotes()
+        loadWords()
     }
 
-    func addQuote(_ quote: UserQuoteModel) {
-        savedQuotes.append(quote)
-        saveQuotes()
+    func addUserWord(_ word: userWordModel) {
+        savedUserWords.append(word)
+        saveUserWord()
     }
 
-    private func saveQuotes() {
-        if let data = try? JSONEncoder().encode(savedQuotes) {
+    private func saveUserWord() {
+        if let data = try? JSONEncoder().encode(savedUserWords) {
             userDefaults?.set(data, forKey: saveKey)
         }
     }
 
-    private func loadQuotes() {
+    private func loadWords() {
         if let data = userDefaults?.data(forKey: saveKey),
-           let decoded = try? JSONDecoder().decode([UserQuoteModel].self, from: data) {
-            savedQuotes = decoded
+           let decoded = try? JSONDecoder().decode([userWordModel].self, from: data) {
+            savedUserWords = decoded
         }
     }
-    func updateQuote(_ updated: UserQuoteModel) {
-        if let index = savedQuotes.firstIndex(where: { $0.id == updated.id }) {
-            savedQuotes[index] = updated
-            saveQuotes()
+    func updateWord(_ updated: userWordModel) {
+        if let index = savedUserWords.firstIndex(where: { $0.id == updated.id }) {
+            savedUserWords[index] = updated
+            saveUserWord()
         }
     }
-    func deleteQuotes(at offsets: IndexSet) {
-        savedQuotes.remove(atOffsets: offsets)
-        saveQuotes()
+    func deleteUserWords(at offsets: IndexSet) {
+        savedUserWords.remove(atOffsets: offsets)
+        saveUserWord()
     }
 }
 
-struct DetailView: View {
-    @State private var quote: String = ""
-    @State private var author: String = ""
+struct UserWordView: View {
+    @State private var word: String = ""
+    @State private var definition: String = ""
     @State private var date: Date = Date()
     @State private var id: UUID = UUID()
     
-    var existingQuote: UserQuoteModel? = nil
+    var existingWord: userWordModel? = nil
 
     
-    @EnvironmentObject var manager: QuoteManager
+    @EnvironmentObject var manager: userWordManager
     @Environment(\.dismiss) var dismiss
 
 
     var body: some View {
         Form {
             TextField(
-                    "Enter quote",
-                    text: $quote
+                    "Enter word",
+                    text: $word
                 )
-            TextField(
-                    "Enter Author",
-                    text: $author
-                )
+            
             DatePicker(selection: $date, displayedComponents: .date,  label: { Text("Date") }, )
                 .datePickerStyle(.automatic)
             Button("Save") {
-                let updatedQuote = UserQuoteModel(quote: quote, author: author, date: date, id: id)
+                let updatedWord = userWordModel(word: word, definition: definition, date: date, id: id)
 
-                if existingQuote == nil {
-                    manager.addQuote(updatedQuote)
+                if existingWord == nil {
+                    manager.addUserWord(updatedWord)
                                 } else {
-                                    manager.updateQuote(updatedQuote)
+                                    manager.updateWord(updatedWord)
                                 }
                 dismiss()
             }
                 
 
         }
-        .navigationTitle(existingQuote == nil ? "Add a quote" : "Edit quote")
+        .navigationTitle(existingWord == nil ? "Add a word" : "Edit word")
                 .onAppear {
-                    if let existing = existingQuote {
-                        quote = existing.quote
-                        author = existing.author
+                    if let existing = existingWord {
+                        word = existing.word
+                        definition = existing.definition
                         date = existing.date
                         id = existing.id
                     }
                 }
         
+        Spacer()
         
     }
 }
 
-struct UserQuote: View {
-    @EnvironmentObject var manager: QuoteManager
+struct UserWords: View {
+    @EnvironmentObject var manager: userWordManager
     @State private var searchTerm = ""
     @State var oldest: Bool = false
     @State var newest: Bool = false
     @State var alphabetical: Bool = false
-    var searchQuotes: [UserQuoteModel] {
+    var searchUserWords: [userWordModel] {
         guard !searchTerm.isEmpty else {
-            return manager.savedQuotes
+            return manager.savedUserWords
         }
-        return manager.savedQuotes.filter { quote in  quote.quote.localizedCaseInsensitiveContains(searchTerm) ||
-            quote.author.localizedCaseInsensitiveContains(searchTerm)
+        return manager.savedUserWords.filter { word in  word.word.localizedCaseInsensitiveContains(searchTerm) ||
+            word.definition.localizedCaseInsensitiveContains(searchTerm)
         }
     }
-    var currentWords: [UserQuoteModel] {
+    var currentWords: [userWordModel] {
         if(oldest == true){
-            return searchQuotes.sorted { $0.date < $1.date }
+            return searchUserWords.sorted { $0.date < $1.date }
         }
         else if(newest == true){
-            return searchQuotes.sorted { $0.date > $1.date }
+            return searchUserWords.sorted { $0.date > $1.date }
         }
         else if(alphabetical==true){
-            return searchQuotes.sorted { $1.quote > $0.quote }
+            return searchUserWords.sorted { $1.word > $0.word }
         }
-        else{
-            return searchQuotes
+        else {
+            return searchUserWords
         }
     }
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             VStack{
                 HStack{
                     Menu("Sort by") {
@@ -169,34 +167,35 @@ struct UserQuote: View {
                     .buttonStyle(.borderedProminent)
                     .foregroundColor(.accentOpposite)
 
-                    NavigationLink(destination: DetailView().environmentObject(manager)) {
-                        Label("Add a quote", systemImage: "plus")
+                    NavigationLink(destination: UserWordView().environmentObject(manager)) {
+                        Label("Add a word", systemImage: "plus")
                     }
                 }
                 
                 
                 List {
                     
-                    ForEach(currentWords) { quote in
+                    ForEach(currentWords) { word in
                         NavigationLink(
-                            destination: DetailView(existingQuote: quote).environmentObject(manager)
+                            destination: UserWordView(existingWord: word).environmentObject(manager)
                         ) {
                             
                             VStack(alignment: .leading) {
-                                Text(quote.quote).font(.headline)
-                                Text("- \(quote.author)").font(.subheadline)
-                                Text(quote.date.formatted(date: .abbreviated, time: .omitted))
+                                Text(word.word).font(.headline)
+                                Text(word.definition).font(.subheadline)
+
+                                Text(word.date.formatted(date: .abbreviated, time: .omitted))
 
                             }
                         }
                     }
                     .onDelete { indexSet in
-                        manager.deleteQuotes(at: indexSet)
+                        manager.deleteUserWords(at: indexSet)
                     }
                 }
                 
                         
-                .navigationBarTitle("Your Quotes")
+                .navigationBarTitle("Your Words")
                 .searchable(text: $searchTerm, prompt: "Search for a word")
             }
             
@@ -206,7 +205,8 @@ struct UserQuote: View {
 
 
 #Preview {
-    UserQuote()
-        .environmentObject(QuoteManager())
+    UserWords()
+        .environmentObject(userWordManager())
 
 }
+

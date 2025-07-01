@@ -45,7 +45,7 @@ struct DailyQuote: View {
     var selectedAuthor: [Quote]? = nil
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
                 
             if let quote = selectedQuote {
                     VStack(alignment: .leading) {
@@ -56,9 +56,13 @@ struct DailyQuote: View {
                                 .font(.subheadline)
                     }
                 }
+                    .navigationTitle("A quote for you")
+                    .fontDesign(.serif)
+                    .padding(.horizontal)
+
             }
+
             }
-        .navigationTitle("The Daily Word")
         .onAppear {
             let aristotleQuotes = quoteViewer.quotes.filter { $0.author == "Aristotle" }
             let ERooseveltQuotes = quoteViewer.quotes.filter { $0.author == "Eleanor Roosevelt" }

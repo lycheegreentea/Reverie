@@ -49,7 +49,6 @@ struct PastWords: View {
         
         NavigationStack {
             VStack{
-                
                 HStack{
                     Menu("Sort by") {
                         Button{
@@ -58,7 +57,7 @@ struct PastWords: View {
                                 alphabetical = false
                         } label: {
                             Label("oldest", systemImage: "plus")
-                                .fontDesign(.serif)
+
 
                             
                         }
@@ -68,7 +67,7 @@ struct PastWords: View {
                                 alphabetical = false
                         } label: {
                             Label("newest", systemImage: "plus")
-                                .fontDesign(.serif)
+
 
                         }
                         Button{
@@ -77,21 +76,26 @@ struct PastWords: View {
                                 oldest = false
                         } label: {
                             Label("alphabetical", systemImage: "plus")
-                                .fontDesign(.serif)
+
 
                         }
                     }
-                    .tint(Color.primary)
                     .contentTransition(.opacity)
                     .fontDesign(.serif)
                     .buttonStyle(.borderedProminent)
+                    .foregroundColor(.accentOpposite)
 
-                    Toggle("Favorites", systemImage: "star.fill", isOn: $favoritesToggled)
-                        .tint(Color.primary)
+                    Toggle(isOn: $favoritesToggled) {
+                        Label("Favorites", systemImage: "star.fill")
+                            .foregroundColor(favoritesToggled ? .accentOpposite : .primary)
+
+                    }
                         .toggleStyle(.button)
+
                         .contentTransition(.opacity)
                         .fontDesign(.serif)
                         .buttonStyle(.borderedProminent)
+                    
 
                 }
                     List(currentWords) { word in
@@ -136,15 +140,13 @@ struct PastWords: View {
                 }
                 .toolbar {
                     
-                    
-                    
+                   
                 
                     ToolbarItem(placement: .topBarTrailing){
                         NavigationLink(destination: Settings()) {
                                     Image(systemName: "gearshape")
                                         .imageScale(.large)
                                 }
-                        .padding(.top, 90)
                         .foregroundColor(.primary)
 
                     }

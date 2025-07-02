@@ -66,16 +66,21 @@ struct Settings: View {
                     ForEach(Appearance.allCases) { mode in
                         Text(mode.rawValue).tag(mode)
                     }
-
+                    
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
-                
-                Image("Walrus")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-                
+                HStack{
+                    Image("Walrus")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                    Image("Dwane")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 35)
+                    
+                }
             }
             .fontDesign(.serif)
             .navigationBarTitle("Settings")

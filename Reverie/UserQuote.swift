@@ -13,7 +13,7 @@ struct UserQuoteModel: Codable, Identifiable {
     let id: UUID
     
     static let sample = UserQuoteModel(
-        quote: "A very fantastical quote!",
+        quote: "A very spectacular quote!",
         author: "me",
         date: Date(),
         id: UUID()

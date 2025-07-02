@@ -13,10 +13,10 @@ struct ContentView: View {
                 Tab("Word", systemImage: "textformat.characters") {
                     WordView()
                 }
-                Tab("Archive", systemImage: "append.page") {
+                Tab("Archive", systemImage: "books.vertical") {
                     PastWords()
                 }
-                Tab("Your Words", systemImage: "append.page") {
+                Tab("Your Words", systemImage: "bubble.and.pencil") {
                     UserWords()
                 }
                 Tab("Quote", systemImage: "quote.opening") {

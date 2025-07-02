@@ -43,9 +43,7 @@ struct Settings: View {
         NavigationStack {
             
             
-            
-            Spacer()
-            VStack {
+                VStack {
                 Text("Quote Person")
                     .font(.title)
                 Picker("Select a person", selection: selectedPerson) {
@@ -67,11 +65,16 @@ struct Settings: View {
                 Picker("Appearance", selection: $selectedAppearance) {
                     ForEach(Appearance.allCases) { mode in
                         Text(mode.rawValue).tag(mode)
-                        
                     }
+
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
+                
+                Image("Walrus")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50)
                 
             }
             .fontDesign(.serif)

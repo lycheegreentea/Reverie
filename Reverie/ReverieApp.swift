@@ -17,14 +17,13 @@ struct ReverieApp: App {
     var body: some Scene {
         
         WindowGroup {
-            NavigationStack {
                 
                 
                 ContentView()
                    
                 
                 
-            }
+            
             .preferredColorScheme(colorScheme(for: selectedAppearance))
             .environmentObject(favoriteManager)
             .environmentObject(wordStore)

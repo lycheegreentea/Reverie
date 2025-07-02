@@ -11,8 +11,8 @@ import SwiftUI
 @main
 struct WordWidgetExtensionBundle: WidgetBundle {
     @WidgetBundleBuilder var body: some Widget {
-        RandomQuoteWidget()
+        //RandomQuoteWidget()
         WordWidgetExtension()
-        UserQuoteWidget()
+        //UserQuoteWidget()
     }
 }

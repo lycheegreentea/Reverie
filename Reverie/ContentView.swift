@@ -9,32 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            Tab("Word", systemImage: "textformat.characters") {
-                WordView()
+            TabView {
+                Tab("Word", systemImage: "textformat.characters") {
+                    WordView()
                 }
-            Tab("Archive", systemImage: "append.page") {
-                PastWords()
+                Tab("Archive", systemImage: "append.page") {
+                    PastWords()
                 }
-            Tab("Your Words", systemImage: "append.page") {
-                UserWords()
+                Tab("Your Words", systemImage: "append.page") {
+                    UserWords()
                 }
-            Tab("Quote", systemImage: "quote.opening") {
-                DailyQuote()
+                Tab("Quote", systemImage: "quote.opening") {
+                    DailyQuote()
                 }
-            Tab("Your Quotes", systemImage: "quote.bubble.rtl") {
-                UserQuote()
+                Tab("Your Quotes", systemImage: "quote.bubble.rtl") {
+                    UserQuote()
                 }
-            
         }
-        .toolbarBackground(.green, for: .tabBar)
-        .environmentObject(FavoriteManager())
-        .environmentObject(WordStore())
-        .environmentObject(QuoteManager())
-        .environmentObject(userWordManager())
-        
-
-
+            .environmentObject(FavoriteManager())
+            .environmentObject(WordStore())
+            .environmentObject(QuoteManager())
+            .environmentObject(userWordManager())
     }
 }
 

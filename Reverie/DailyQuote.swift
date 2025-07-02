@@ -45,7 +45,7 @@ struct DailyQuote: View {
     var selectedAuthor: [Quote]? = nil
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
                 
             if let quote = selectedQuote {
                     VStack(alignment: .leading) {
@@ -54,14 +54,16 @@ struct DailyQuote: View {
                                 .font(.headline)
                             Text(quote.author)
                                 .font(.subheadline)
+                            Image("sun")
                     }
+                        .fontDesign(.serif)
+                        .padding(.horizontal)
+                        
                 }
                     .navigationTitle("A quote for you")
-                    .fontDesign(.serif)
-                    .padding(.horizontal)
 
             }
-
+            
             }
         .onAppear {
             let aristotleQuotes = quoteViewer.quotes.filter { $0.author == "Aristotle" }
@@ -80,7 +82,7 @@ struct DailyQuote: View {
             }
             
             selectedQuote = randomizeQuote().randomElement()
-            let sharedDefaults = UserDefaults(suiteName: "group.net.lauren.quotecabulary")
+            let sharedDefaults = UserDefaults(suiteName: "group.com.lauren.reverie")
             sharedDefaults?.set(selectedQuote?.quote, forKey: "quoteText")
             sharedDefaults?.set(selectedQuote?.author, forKey: "quoteAuthor")
             

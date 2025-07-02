@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 import WidgetKit
 import SwiftUI
-
+/*
 struct QuoteEntry: TimelineEntry {
     let date: Date
     let quoteText: String
@@ -56,6 +56,9 @@ struct RandomQuoteWidgetEntryView: View {
         }
         .padding()
         .containerBackground(.fill.tertiary, for: .widget)
+        .fontDesign(.serif)
+        .foregroundColor(.primary)
+        
     }
 }
 
@@ -67,12 +70,12 @@ struct RandomQuoteWidget: Widget {
             RandomQuoteWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Random Quote")
-        .description("Shows a random quote.")
+        .description("Shows a random quote")
         .supportedFamilies([.systemMedium])
     }
 }
 
-
+*/
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let streak: [Word]
@@ -108,11 +111,14 @@ struct WordWidgetExtensionEntryView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if let word = word {
+
                 Text(word.word)
-                    .font(.title2)
+                    .font(.title)
+                    .fontWeight(.medium)
                 Text(word.partOfSpeech)
                     .font(.subheadline)
-                
+                Divider()
+                    .frame(height: 1.5)
                 Text(word.definition)
                     .font(.body)
                 Text(word.example)
@@ -126,6 +132,8 @@ struct WordWidgetExtensionEntryView: View {
             }
         }
         .padding()
+        .fontDesign(.serif)
+
         .containerBackground(.fill.tertiary, for: .widget)
     }
 }
@@ -142,7 +150,7 @@ struct WordWidgetExtension: Widget {
         .supportedFamilies([.systemMedium])
     }
 }
-//random user quote
+/*
 struct UserQuote: Codable, TimelineEntry {
     let quote: String
     let author: String
@@ -192,6 +200,8 @@ private func loadRandomQuote() -> UserQuote {
             }
             .padding()
             .containerBackground(.fill.tertiary, for: .widget)
+            .fontDesign(.serif)
+
         }
     }
     
@@ -206,13 +216,10 @@ private func loadRandomQuote() -> UserQuote {
             .configurationDisplayName("Your Saved Quotes")
             .description("Shows a random saved quote.")
             .supportedFamilies([.systemMedium])
+            
         }
     }
-#Preview(as: .systemMedium) {
-    RandomQuoteWidget()
-} timeline: {
-    QuoteEntry(date: .now, quoteText: "Courage is grace under pressure.", quoteAuthor: "Ernest Hemingway")
-}
+*/
 
 #Preview(as: .systemMedium) {
     WordWidgetExtension()

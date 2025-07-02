@@ -46,98 +46,100 @@ struct PastWords: View {
     }
     
     var body: some View {
-        
-        NavigationStack {
+        NavigationStack{
             VStack{
                 HStack{
                     Menu("Sort by") {
                         Button{
-                                oldest = true
-                                newest = false
-                                alphabetical = false
+                            oldest = true
+                            newest = false
+                            alphabetical = false
                         } label: {
                             Label("oldest", systemImage: "plus")
-
-
+                            
+                            
                             
                         }
                         Button{
-                                newest = true
-                                oldest = false
-                                alphabetical = false
+                            newest = true
+                            oldest = false
+                            alphabetical = false
                         } label: {
                             Label("newest", systemImage: "plus")
-
-
+                            
+                            
                         }
                         Button{
-                                alphabetical = true
-                                newest = false
-                                oldest = false
+                            alphabetical = true
+                            newest = false
+                            oldest = false
                         } label: {
                             Label("alphabetical", systemImage: "plus")
-
-
+                            
+                            
                         }
                     }
                     .contentTransition(.opacity)
                     .fontDesign(.serif)
                     .buttonStyle(.borderedProminent)
                     .foregroundColor(.accentOpposite)
-
+                    
                     Toggle(isOn: $favoritesToggled) {
                         Label("Favorites", systemImage: "star.fill")
                             .foregroundColor(favoritesToggled ? .accentOpposite : .primary)
-
+                        
                     }
-                        .toggleStyle(.button)
-
-                        .contentTransition(.opacity)
-                        .fontDesign(.serif)
-                        .buttonStyle(.borderedProminent)
+                    .toggleStyle(.button)
                     
-
+                    .contentTransition(.opacity)
+                    .fontDesign(.serif)
+                    .buttonStyle(.borderedProminent)
+                    
+                    
                 }
-                    List(currentWords) { word in
-                        VStack(alignment: .leading) {
-                            HStack{
-                                Text(word.word)
-                                    .font(.headline)
-                                
-                                Spacer()
-                                Button(action: {
-                                    favoriteManager.toggleFavorite(for: word)
-                                }) {
-                                    Image(systemName: favoriteManager.isFavorite(word) ? "star.fill" : "star")
-                                        .foregroundColor(.primary)
-                                }
-                                .buttonStyle(BorderlessButtonStyle())
+                List(currentWords) { word in
+                    VStack(alignment: .leading) {
+                        HStack{
+                            Text(word.word)
+                                .font(.headline)
+                            
+                            Spacer()
+                            Button(action: {
+                                favoriteManager.toggleFavorite(for: word)
+                            }) {
+                                Image(systemName: favoriteManager.isFavorite(word) ? "star.fill" : "star")
+                                    .foregroundColor(.primary)
                             }
-                            
-                            Text(word.partOfSpeech)
-                                .font(.subheadline)
-                            
-                            Text(word.definition)
-                                .font(.body)
-                            Text(word.example)
-                                .font(.caption)
-                                .italic()
-                            Text(word.date.formatted(date: .abbreviated, time: .omitted))
-                                .font(.caption2)
-                                .foregroundColor(.gray)
+                            .buttonStyle(BorderlessButtonStyle())
                         }
                         
-                        .padding(4)
-                        .fontDesign(.serif)
-
+                        Text(word.partOfSpeech)
+                            .font(.subheadline)
+                        
+                        Text(word.definition)
+                            .font(.body)
+                        Text(word.example)
+                            .font(.caption)
+                            .italic()
+                        Text(word.date.formatted(date: .abbreviated, time: .omitted))
+                            .font(.caption2)
+                            .foregroundColor(.gray)
                     }
-                    .searchable(text: $searchTerm, prompt: "Search for a word")
-                    .scrollContentBackground(.hidden)
-                    .navigationTitle("The Archive")
-                    .background(Color(.systemGray6))
-
+                    
+                    .padding(4)
+                    .fontDesign(.serif)
                     
                 }
+            }
+
+                    .searchable(text: $searchTerm, prompt: "Search for a word")
+
+                    .scrollContentBackground(.hidden)
+
+                    
+                
+                    .navigationTitle("The Archive")
+
                 .toolbar {
                     
                    
@@ -151,6 +153,7 @@ struct PastWords: View {
 
                     }
             }
+
             }
         
         

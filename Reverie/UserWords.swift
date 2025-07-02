@@ -11,6 +11,13 @@ struct userWordModel: Codable, Identifiable {
     let definition: String
     let date: Date
     let id: UUID
+    
+    static let sample = userWordModel(
+        word: "elysian",
+        definition: "relating to or characteristic of heaven or paradise",
+        date: Date(),
+        id: UUID()
+    )
 }
 class userWordManager: ObservableObject {
     @Published var savedUserWords: [userWordModel] = []
@@ -60,6 +67,7 @@ struct UserWordView: View {
     @State private var date: Date = Date()
     @State private var id: UUID = UUID()
     
+
     var existingWord: userWordModel? = nil
 
     
@@ -72,6 +80,10 @@ struct UserWordView: View {
             TextField(
                     "Enter word",
                     text: $word
+                )
+            TextField(
+                    "Enter definition in your own words",
+                    text: $definition
                 )
             
             DatePicker(selection: $date, displayedComponents: .date,  label: { Text("Date") }, )
@@ -118,7 +130,12 @@ struct UserWords: View {
             word.definition.localizedCaseInsensitiveContains(searchTerm)
         }
     }
+
+    
     var currentWords: [userWordModel] {
+        if(searchTerm.isEmpty){
+             return [userWordModel.sample]
+        }
         if(oldest == true){
             return searchUserWords.sorted { $0.date < $1.date }
         }
@@ -134,8 +151,7 @@ struct UserWords: View {
     }
     
     var body: some View {
-        
-        NavigationStack {
+        NavigationStack{
             VStack{
                 HStack{
                     Menu("Sort by") {
@@ -169,7 +185,13 @@ struct UserWords: View {
 
                     NavigationLink(destination: UserWordView().environmentObject(manager)) {
                         Label("Add a word", systemImage: "plus")
+                            .foregroundColor(.accentOpposite)
+
                     }
+                    .contentTransition(.opacity)
+                    
+                    .fontDesign(.serif)
+                    .buttonStyle(.borderedProminent)
                 }
                 
                 
@@ -183,9 +205,9 @@ struct UserWords: View {
                             VStack(alignment: .leading) {
                                 Text(word.word).font(.headline)
                                 Text(word.definition).font(.subheadline)
-
+                                
                                 Text(word.date.formatted(date: .abbreviated, time: .omitted))
-
+                                
                             }
                         }
                     }
@@ -193,10 +215,23 @@ struct UserWords: View {
                         manager.deleteUserWords(at: indexSet)
                     }
                 }
-                
-                        
-                .navigationBarTitle("Your Words")
+                .fontDesign(.serif)
+
                 .searchable(text: $searchTerm, prompt: "Search for a word")
+                .navigationTitle("Your Words")
+
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing){
+                        NavigationLink(destination: Settings()) {
+                                    Image(systemName: "gearshape")
+                                        .imageScale(.large)
+                                }
+                        .foregroundColor(.primary)
+
+                    }
+            }
+
+
             }
             
         }

@@ -11,6 +11,13 @@ struct UserQuoteModel: Codable, Identifiable {
     let author: String
     let date: Date
     let id: UUID
+    
+    static let sample = UserQuoteModel(
+        quote: "A very fantastical quote!",
+        author: "me",
+        date: Date(),
+        id: UUID()
+    )
 }
 class QuoteManager: ObservableObject {
     @Published var savedQuotes: [UserQuoteModel] = []
@@ -66,31 +73,32 @@ struct DetailView: View {
     @EnvironmentObject var manager: QuoteManager
     @Environment(\.dismiss) var dismiss
 
-
+    
     var body: some View {
-        Form {
-            TextField(
+            Form {
+                TextField(
                     "Enter quote",
                     text: $quote
                 )
-            TextField(
+                TextField(
                     "Enter Author",
                     text: $author
                 )
-            DatePicker(selection: $date, displayedComponents: .date,  label: { Text("Date") }, )
-                .datePickerStyle(.automatic)
-            Button("Save") {
-                let updatedQuote = UserQuoteModel(quote: quote, author: author, date: date, id: id)
-
-                if existingQuote == nil {
-                    manager.addQuote(updatedQuote)
-                                } else {
-                                    manager.updateQuote(updatedQuote)
-                                }
-                dismiss()
-            }
+                DatePicker(selection: $date, displayedComponents: .date,  label: { Text("Date") }, )
+                    .datePickerStyle(.automatic)
+                Button("Save") {
+                    let updatedQuote = UserQuoteModel(quote: quote, author: author, date: date, id: id)
+                    
+                    if existingQuote == nil {
+                        manager.addQuote(updatedQuote)
+                    } else {
+                        manager.updateQuote(updatedQuote)
+                    }
+                    dismiss()
+                }
                 
-
+                
+            
         }
         .navigationTitle(existingQuote == nil ? "Add a quote" : "Edit quote")
                 .onAppear {
@@ -121,6 +129,9 @@ struct UserQuote: View {
         }
     }
     var currentWords: [UserQuoteModel] {
+        if(searchTerm.isEmpty){
+             return [UserQuoteModel.sample]
+        }
         if(oldest == true){
             return searchQuotes.sorted { $0.date < $1.date }
         }
@@ -136,8 +147,8 @@ struct UserQuote: View {
     }
     
     var body: some View {
-        
-        NavigationView {
+        NavigationStack{
+
             VStack{
                 HStack{
                     Menu("Sort by") {
@@ -171,7 +182,11 @@ struct UserQuote: View {
 
                     NavigationLink(destination: DetailView().environmentObject(manager)) {
                         Label("Add a quote", systemImage: "plus")
+                            .foregroundColor(.accentOpposite)
                     }
+                    .contentTransition(.opacity)
+                    .fontDesign(.serif)
+                    .buttonStyle(.borderedProminent)
                 }
                 
                 
@@ -186,7 +201,7 @@ struct UserQuote: View {
                                 Text(quote.quote).font(.headline)
                                 Text("- \(quote.author)").font(.subheadline)
                                 Text(quote.date.formatted(date: .abbreviated, time: .omitted))
-
+                                
                             }
                         }
                     }
@@ -194,10 +209,22 @@ struct UserQuote: View {
                         manager.deleteQuotes(at: indexSet)
                     }
                 }
-                
-                        
-                .navigationBarTitle("Your Quotes")
+                .fontDesign(.serif)
                 .searchable(text: $searchTerm, prompt: "Search for a word")
+                .navigationTitle("Your Quotes")
+
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing){
+                        NavigationLink(destination: Settings()) {
+                                    Image(systemName: "gearshape")
+                                        .imageScale(.large)
+                                }
+                        .foregroundColor(.primary)
+
+                    }
+                    
+            }
+
             }
             
         }

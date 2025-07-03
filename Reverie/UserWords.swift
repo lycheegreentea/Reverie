@@ -133,9 +133,6 @@ struct UserWords: View {
 
     
     var currentWords: [userWordModel] {
-        if(searchTerm.isEmpty){
-             return [userWordModel.sample]
-        }
         if(oldest == true){
             return searchUserWords.sorted { $0.date < $1.date }
         }

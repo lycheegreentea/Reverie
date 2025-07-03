@@ -129,9 +129,7 @@ struct UserQuote: View {
         }
     }
     var currentWords: [UserQuoteModel] {
-        if(searchTerm.isEmpty){
-             return [UserQuoteModel.sample]
-        }
+        
         if(oldest == true){
             return searchQuotes.sorted { $0.date < $1.date }
         }

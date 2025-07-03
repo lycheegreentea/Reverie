@@ -54,17 +54,30 @@ struct DailyQuote: View {
                                 .font(.headline)
                             Text(quote.author)
                                 .font(.subheadline)
-                            Image("sun")
                     }
                         .fontDesign(.serif)
                         .padding(.horizontal)
                         
                 }
                     .navigationTitle("A quote for you")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing){
+                            NavigationLink(destination: Settings()) {
+                                        Image(systemName: "gearshape")
+                                            .imageScale(.large)
+                                    }
+                            .foregroundColor(.primary)
+                }
+                            
+
+                                
+                        }
 
             }
             
+            
             }
+        
         .onAppear {
             let aristotleQuotes = quoteViewer.quotes.filter { $0.author == "Aristotle" }
             let ERooseveltQuotes = quoteViewer.quotes.filter { $0.author == "Eleanor Roosevelt" }
@@ -90,6 +103,7 @@ struct DailyQuote: View {
 
 
         }
+
             }
 }
 

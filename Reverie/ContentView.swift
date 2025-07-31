@@ -18,18 +18,17 @@ struct ContentView: View {
                 }
                 Tab("Your Words", systemImage: "bubble.and.pencil") {
                     UserWords()
+
                 }
                 Tab("Quote", systemImage: "quote.opening") {
                     DailyQuote()
                 }
                 Tab("Your Quotes", systemImage: "quote.bubble.rtl") {
-                    UserQuote()
+                    UserQuotes()
                 }
         }
             .environmentObject(FavoriteManager())
             .environmentObject(WordStore())
-            .environmentObject(QuoteManager())
-            .environmentObject(userWordManager())
     }
 }
 

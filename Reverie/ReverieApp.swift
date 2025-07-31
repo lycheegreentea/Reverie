@@ -13,6 +13,8 @@ struct ReverieApp: App {
     @StateObject private var favoriteManager = FavoriteManager()
     @StateObject private var wordStore = WordStore()
     @AppStorage("appearance") private var selectedAppearance: Appearance = .system
+    let persistenceController = PersistenceController.shared
+
 
     var body: some Scene {
         
@@ -27,6 +29,8 @@ struct ReverieApp: App {
             .preferredColorScheme(colorScheme(for: selectedAppearance))
             .environmentObject(favoriteManager)
             .environmentObject(wordStore)
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+
         }
         
     }
